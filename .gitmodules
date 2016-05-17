@@ -1,0 +1,6 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:b1101/b1101.github.io
+[submodule "themes/angels-ladder"]
+	path = themes/angels-ladder
+	url = git@github.com:b1101/angels-ladder

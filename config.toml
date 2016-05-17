@@ -1,0 +1,23 @@
+baseURL=                    "https://b1101.github.io/"
+languageCode=               "en-us"
+title =                     "~b1101"
+googleAnalytics=            "UA-77952590-1"
+
+editor=                     "nvim"
+publishdir=                 "public"
+pygmentsStyle=              "zenburn"
+
+#theme:                     ""
+
+[params]
+subtitle = "Musician in the world of algorithms surrounded by a $SHELL"
+copyright = "Written by Romāns Volosatovs"
+facebook = "https://facebook.com/r.volosatovs"
+twitter = "https://twitter.com/flat1101"
+linkedin = "https://www.linkedin.com/in/rvolosatovs"
+github = "https://github.com/b1101"
+disqusShortname = "b1101"
+#showsRSS = true
+#profile = "/images/profile.png"
+#analytics = "UA-XXXXXXXX-X"
+#shareThis = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"
