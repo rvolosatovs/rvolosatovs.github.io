@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>About on ~b1101</title>
+    <link>https://b1101.github.io/categories/about/</link>
+    <description>Recent content in About on ~b1101</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 May 2016 19:31:30 +0200</lastBuildDate>
+    <atom:link href="https://b1101.github.io/categories/about/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>$ echo &#34;Hello, ${USER}!&#34;</title>
+      <link>https://b1101.github.io/post/hello/</link>
+      <pubDate>Mon, 16 May 2016 19:31:30 +0200</pubDate>
+      
+      <guid>https://b1101.github.io/post/hello/</guid>
+      <description>
+
+&lt;p&gt;Hi. I&amp;rsquo;m &lt;a href=&#34;https://github.com/b1101&#34;&gt;b1101&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;echo &amp;quot;I am a `OneOf=(&#39;musician&#39; &#39;programmer&#39;); echo $OneOf[$(( $RANDOM % 2 + 1 ))]`&amp;quot;
+# Still have not decided completely
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By the way, &amp;lsquo;b&amp;rsquo; stands for &lt;a href=&#34;https://en.wikipedia.org/wiki/Flat_(music)&#34;&gt;flat&lt;/a&gt; and if you don&amp;rsquo;t know how much &amp;lsquo;1101&amp;rsquo; is, you should probably &lt;code&gt;^D&lt;/code&gt;. All of this nicely sums up to &lt;a href=&#34;https://en.wikipedia.org/wiki/Thirteenth&#34;&gt;this&lt;/a&gt; flattened, which is &lt;strong&gt;the&lt;/strong&gt; sound&lt;/p&gt;
+
+&lt;h1 id=&#34;whoami&#34;&gt;$ whoami&lt;/h1&gt;
+
+&lt;p&gt;My name is Roman(like the Empire). No, you &lt;em&gt;don&amp;rsquo;t&lt;/em&gt; need the &amp;rsquo;s&amp;rsquo; at the end.&lt;/p&gt;
+
+&lt;p&gt;My editor of choice is &lt;a href=&#34;https://neovim.io/&#34;&gt;Neovim&lt;/a&gt;. I &lt;strong&gt;really like&lt;/strong&gt; modal editing, but I am planning to try &lt;a href=&#34;https://www.gnu.org/software/emacs/&#34;&gt;Emacs&lt;/a&gt;, I just want to get my &lt;a href=&#34;http://olkb.com/preonic/&#34;&gt;Preonic&lt;/a&gt; before doing that.(Can&amp;rsquo;t wait to put all of of these modifier keys on the bottom row&amp;hellip;). By the way, currently I use Pok3r from Vortex.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Sidenote: GNU guys are really serious about that &amp;lsquo;fancy&amp;rsquo; website design, just look at Emacs page! I think any real user of Emacs would prefer a simple page with release notes and a link to a tarball instead of that useless bloat, people in need of install instructions are not capable of making use of it anyway&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Currently I run &lt;a href=&#34;https://www.archlinux.org/&#34;&gt;Arch&lt;/a&gt;(I need Node, for example, which does not support LibreSSL and plus Arch just works) and &lt;a href=&#34;https://www.gentoo.org/&#34;&gt;Gentoo&lt;/a&gt;(my main, with LibreSSL). If you want to know more just go to my &lt;a href=&#34;https://github.com/b1101/dotfiles&#34;&gt;dotfile&lt;/a&gt; repo.&lt;/p&gt;
+
+&lt;h1 id=&#34;irl&#34;&gt;IRL&lt;/h1&gt;
+
+&lt;p&gt;I have 2 bikes, both are built by myself. I like riding &lt;strong&gt;fast&lt;/strong&gt;, and I am very happy that I can &lt;em&gt;safely&lt;/em&gt; do it here, in Netherlands, where I am studying right now. I would probably be dead by now if I rode like that in the &lt;a href=&#34;https://en.wikipedia.org/wiki/Latvia&#34;&gt;country I am originally from&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;By the way, I have found a &lt;a href=&#34;http://www.chainreactioncycles.com/nl/en/shimano-am5-mtb-spd-shoes-2016/rp-prod138001&#34;&gt;perfect pair of SPD shoes&lt;/a&gt; that I can wear casually and do not look as a total weirdo, yay!&lt;/p&gt;
+
+&lt;p&gt;One of the other things I like are board games. My favorite is &lt;a href=&#34;https://boardgamegeek.com/boardgame/39463/cosmic-encounter&#34;&gt;Cosmic Encounter&lt;/a&gt;. Unfortunately, I am coding too much and do not have time to play them(or, actually, do anything else besides coding).&lt;/p&gt;
+
+&lt;p&gt;Surprising fact, I like to cook. I also do know how to bake cakes, for example, but I rarely do so as I have quit added sugar, flour and starchy stuff quite some time ago.&lt;/p&gt;
+
+&lt;p&gt;If you know me in real life, you probably think I am weird. Good to know.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    GSoC 2016 - prelude | ~b1101
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://b1101.github.io/post/gsoc_pre/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="https://b1101.github.io/index.xml" rel="alternate" type="application/rss+xml" title="~b1101" />
+  <link href="https://b1101.github.io/index.xml" rel="feed" type="application/rss+xml" title="~b1101" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="https://b1101.github.io/">~b1101</a></h1>
+        <h2>Musician in the world of algorithms surrounded by my $SHELL</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          
+          <li><a href="https://github.com/b1101" target="_blank">GitHub</a></li>
+          <li><a href="https://twitter.com/flat1101" target="_blank">Twitter</a></li>
+          <li><a href="https://www.linkedin.com/in/rvolosatovs" target="_blank">Linkedin</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+      <h1>GSoC 2016 - prelude</h1>
+      <div class="meta">
+        May 17, 2016 &nbsp;
+        
+          #<a href="/tags/gsoc">gsoc</a>&nbsp;
+        
+          #<a href="/tags/browsix">browsix</a>&nbsp;
+        
+          #<a href="/tags/go">go</a>&nbsp;
+        
+      </div>
+    </div>
+    <article>
+      
+
+<p>My <a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a> <a href="https://summerofcode.withgoogle.com/projects/#6227933760847872">proposal</a> got accepted and I am going to write code for <a href="https://github.com/plasma-umass/browsix">Browsix</a> all summer this year.
+<a href="https://bpowers.net/">Bobby Powers</a> is going to be my mentor.
+And if all of that was not <em>&lsquo;cool&rsquo;</em> enough - I&rsquo;m doing it all in <a href="https://golang.org/">Go</a>.</p>
+
+<p>GSoC oficially starts on May 23 and it is one of the main reasons that made me create this blog</p>
+
+<h2 id="a-not-so-short-intro-of-myself">A not-so-short intro of myself</h2>
+
+<p><em>Text beneath this line is basically an unnecessary description of myself and how I applied/got accepted</em>
+I&rsquo;ve been trying, installing, breaking, reinstalling, breaking, configuring, breaking, compiling and breaking different Linux(*BSD) distributions - Arch, Void, Exherbo, Gentoo, Funtoo, Guix, Nix, you name it&hellip;(I even installed Stali, but I was too lazy to set it up) for the last ~4 months</p>
+
+<p>I was so into &lsquo;distrohopping&rsquo; that I even got to a point when I had an exam at 8.45 at the morning and I skipped almost all the lectures in the subject and was totally not ready, but I was in a process of installing a distro for 3 days and I just managed to successfully boot, made all the necessary hardware work and even started X. 3 days without a GUI(other than an occasional one from a LiveUSB) and I could not stop. I was configuring my desktop until about 3am, when I felt that I need to go to sleep, because of the exam. I layed in bed for about 1 hour thinking about Linux, then I got up and continued.</p>
+
+<p>I might have taken it to some kind of an extreme, reinstalling a system 1,2,3 times a week(by the way each time installing a new OS I formatted my drive, thinking I know enough to make everything work the 1st time and I did not ask questions to anyone, I was to the one to find out the answers by myself), but it was an amazing learning experience. I learned an <em>awful <strong>lot</strong> of stuff</em>.Oh, and I do not need an install guide anymore!</p>
+
+<h3 id="gsoc-application">GSOC - application</h3>
+
+<p>One day, when my &lsquo;distrohopping spree&rsquo; got into a somewhat &lsquo;calmer&rsquo; state I discovered Google Summer of Code. It was ~2 months until the application started, I read some articles on the Internet, stating it&rsquo;s very hard to get into, you need to prepare etc. I decided to study, to learn and become a &lsquo;real&rsquo; programmer and then &lsquo;maybe, I would be accepted next year&rsquo;. It became of a somewhat like an unreal dream of mine to participate in a project like that(I did not even really know how to code at the start of this study year)</p>
+
+<p>When the organization list was announced I really wanted to know, which are there. One of the projects that got my attention was Browsix. Why? Because it seemed like something I would ultimately like to do(cmon, words like <em>Unix</em> and <em>Shell</em> are enough to get me hooked), but at the same time it seemed so hard and out-of-my-league that I would never be able to do this.</p>
+
+<p>You are usually supposed to send a do some small task for the org before applying - fix some issue, send a pull request, for example. And so, as I like to dream about stuff, &ldquo;Ok, so that is something I would like to do. Let&rsquo;s imagine that some day in the future, when I would understand what&rsquo;s actualy going on, I got on this page, what would I do?&rdquo;</p>
+
+<p>I went on to the pull request page. Everything seemed impossible. I saw some pull requests already having someone working on them, then I got to a command I&rsquo;ve never used before, called - <code>xargs</code>. I honestly did not even know it exists. Moreover, the implementations of commands would be done in Typescript and an in-browser port of &lsquo;node&rsquo; would be used to interact with the in-browser FS.(it&rsquo;s worth mentioning that I had no idea what Node.js and Typescript really are at that point and I did not know much more about JavaScript, than that is uses a <code>var</code> to declare variables and that there are cool docs on MDN)</p>
+
+<p>Long story short(it is already pretty long actualy) I managed to implement it. I sent a pull request consisting of many commits, then I had to fix it. At the end it all summed up to a <em>terrible pull request of <strong>18</strong> commits</em>. I am still ashamed of that fact, but, neither did I know how to acutally use Git(I could have just, for example, resetted head, or rebased, or cherry picked, but no - all of the terrible history of my commits went into the tree and they are not going away anymore)</p>
+
+<p>Anyway, my first ever pull request was accepted and I felt happy. Much happy, many proud.</p>
+
+<p>I wrote my proposal in the first 2-3 days of the application window, but I was very confused about the whole application process. After reading some of the source code of other init systems I decided to not apply this year. I felt like I am not qualified enough and sending a proposal now would be just a waste of time, it would only make me upset when I find out I am not accepted in a month. At the end I submitted my proposal several hours before the deadline.  I only sent a proposalto 1 organisation and did not submit any drafts.</p>
+
+<p>I still can not believe that I am one of the students participating in Google Summer of Code. It feels impossible. (Especially for a first year Bachelor student, who decided to study programming in the last semester of high school. I was in-between studying Jazz or Chemistry)</p>
+
+<p><em>That turned out to be a pretty long blogpost, didn&rsquo;t expect that. And by the way, my skillset broadened since that I now am much more knowledgable about stuff, most importantly I have a clear idea on what I have to do and how I am going to do it</em></p>
+
+      
+      
+      
+    </article>
+    
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="https://b1101.github.io/post/hello/" rel="prev">$ echo &#34;Hello, ${USER}!&#34;</a></span>
+    
+    
+      <span class="next"><a href="https://b1101.github.io/post/gsoc_pre2/" rel="next">GSoC - Getting ready</a> &rarr;</span>
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      Written by Romāns Volosatovs
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>~b1101</title>
+    <link>https://b1101.github.io/</link>
+    <description>Recent content on ~b1101</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 May 2016 15:23:35 +0200</lastBuildDate>
+    <atom:link href="https://b1101.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GSoC 2016 - Introduction</title>
+      <link>https://b1101.github.io/post/gsoc/</link>
+      <pubDate>Thu, 19 May 2016 15:23:35 +0200</pubDate>
+      
+      <guid>https://b1101.github.io/post/gsoc/</guid>
+      <description>
+
+&lt;p&gt;Hi, my name is Roman, I am a First-year Software Science Bachelor student at &lt;a href=&#34;https://www.tue.nl/&#34;&gt;TU/e&lt;/a&gt;. This summer I am going to work on implementation of &lt;a href=&#34;https://summerofcode.withgoogle.com/projects/#6227933760847872&#34;&gt;init and IPC systems&lt;/a&gt; for &lt;a href=&#34;https://github.com/plasma-umass/browsix&#34;&gt;Browsix&lt;/a&gt;, which is a project developed in &lt;a href=&#34;http://plasma.cs.umass.edu/&#34;&gt;PLASMA-UMass&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://bpowers.net/&#34;&gt;Bobby Powers&lt;/a&gt; is going to be my mentor.&lt;/p&gt;
+
+&lt;p&gt;And if all of that was not &lt;em&gt;&amp;lsquo;cool&amp;rsquo;&lt;/em&gt; enough - I&amp;rsquo;m going to write in &lt;a href=&#34;https://golang.org/&#34;&gt;Go&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-project&#34;&gt;The project&lt;/h2&gt;
+
+&lt;p&gt;The init system is intended to make using Browsix in development easier. An additional goal is making it possible to run it on &amp;lsquo;real&amp;rsquo; hardware(I think I&amp;rsquo;m going to end up using it on my own machine).&lt;/p&gt;
+
+&lt;p&gt;Systemd, a somewhat controversial init system is de-facto standard in the Linux world and it is important to keep that in mind. The init system I&amp;rsquo;m going to develop will provide an interface familiar for a person coming from &amp;lsquo;systemd&amp;rsquo; background and on top of that the service specification is going to be done in Systemd unit-file format.&lt;/p&gt;
+
+&lt;p&gt;The init system itself does not seem to be too hard to implement and so I will probably spend a lot of time working on the IPC.&lt;/p&gt;
+
+&lt;p&gt;For now I have implemented &lt;code&gt;xargs&lt;/code&gt; and fixed an &lt;a href=&#34;https://github.com/plasma-umass/browsix/pull/30&#34;&gt;issue&lt;/a&gt; with &lt;code&gt;rm -r&lt;/code&gt; flag for Browsix shell, both were done in &lt;a href=&#34;http://www.typescriptlang.org/&#34;&gt;Typescript&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
