@@ -6,7 +6,7 @@ title = "GSoC 2016 - Introduction"
 
 +++
 
-Hi, my name is Roman, I am a First-year Software Science Bachelor student at [TU/e](https://www.tue.nl/). This summer I am going to work on implementation of [init and IPC systems](https://summerofcode.withgoogle.com/projects/#6227933760847872) for [Browsix](https://github.com/plasma-umass/browsix), which is a project developed in [PLASMA-UMass](http://plasma.cs.umass.edu/). <!--more-->
+Hi, my name is Roman, I am a First-year Software Science Bachelor student at [TU/e](https://www.tue.nl/en/). This summer I am going to work on implementation of [init and IPC systems](https://summerofcode.withgoogle.com/projects/#6227933760847872) for [Browsix](https://github.com/plasma-umass/browsix), which is a project developed in [PLASMA-UMass](http://plasma.cs.umass.edu/). <!--more-->
 
 [Bobby Powers](https://bpowers.net/) is going to be my mentor.
 
