@@ -6,8 +6,26 @@
     <description>Recent content in Gsoc on ~b1101</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 May 2016 15:23:35 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 29 May 2016 12:26:54 +0200</lastBuildDate>
     <atom:link href="https://b1101.github.io/categories/gsoc/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GSoC - End of First Week</title>
+      <link>https://b1101.github.io/post/week1/</link>
+      <pubDate>Sun, 29 May 2016 12:26:54 +0200</pubDate>
+      
+      <guid>https://b1101.github.io/post/week1/</guid>
+      <description>&lt;p&gt;The first week of GSoC is over. Turned out to be kind of long for me, as I could not wait until Monday and started working on Saturday evening already.&lt;/p&gt;
+
+&lt;p&gt;It goes pretty well, I&amp;rsquo;d say. Already managed to rewrite a lot of code I initially wrote, but units get properly parsed and some of them even get started, but most importantly I now know exactly what my next steps should be.&lt;/p&gt;
+
+&lt;p&gt;One of the biggest issues for me is coming up with a proper structure. I spend most of my time sitting with a pen and a paper, drawing and trying to understand, how should everything be connected, how shall I organize it. The code itself seems to be really straight-forward, though. I hope now I came up with a structure that somewhat makes sense. I already see things that could(should) be changed/improved, but currently I decided to move forward and then come back to organization, when more stuff works and the requirements are clearer.&lt;/p&gt;
+
+&lt;p&gt;Actually I&amp;rsquo;m pretty new to Golang &amp;ndash; this is only my 2nd experience with it. The first one was a research project I worked on for 1.5 weeks before the start of GSoC. I found the interface-based inheritance in Go to be really interesting concept, it really does make you think forward and structure everything properly and, while I still miss some of the &amp;lsquo;proper&amp;rsquo; inhertitance features(I can&amp;rsquo;t stop wanting 1 method on the parent &amp;lsquo;class&amp;rsquo;, which all the children would inherit, for example), it seems to be somewhat &amp;lsquo;better&amp;rsquo; and I start to like it.&lt;/p&gt;
+
+&lt;p&gt;By the way, the Go standard library and tooling are incredible.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GSoC 2016 - Introduction</title>
