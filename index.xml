@@ -6,8 +6,22 @@
     <description>Recent content on ~b1101</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 29 May 2016 12:26:54 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jun 2016 19:42:46 +0200</lastBuildDate>
     <atom:link href="https://b1101.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GSoC - Middle of Week 4</title>
+      <link>https://b1101.github.io/post/week4/</link>
+      <pubDate>Thu, 16 Jun 2016 19:42:46 +0200</pubDate>
+      
+      <guid>https://b1101.github.io/post/week4/</guid>
+      <description>&lt;p&gt;A LOT has happened during the week 2 and 3. I have even managed to work on the project while waiting for the doctor in a hospital emergency room. Long story short: I&amp;rsquo;ve been pretty busy lately, at least yesterday was this year&amp;rsquo;s last lecture for me and now I only have to pass 2 exams and that will be it.&lt;/p&gt;
+
+&lt;p&gt;Today Github reports 43 commits, 5,005 additions and 2,839 deletions from my side in the master branch of the &lt;a href=&#34;https://github.com/b1101/systemgo&#34;&gt;repo&lt;/a&gt;. The last comit was done 3 days ago and I am oficially stuck. I am not stuck in the sense that I do not know &lt;em&gt;what&lt;/em&gt; to do, I am stuck in the sense that I do not know &lt;em&gt;how&lt;/em&gt; to do it &lt;strong&gt;properly&lt;/strong&gt;. Currently I think that almost all of the structural decisions I came up with are totally useless and need to be redone.&lt;/p&gt;
+
+&lt;p&gt;One of the biggest issues is that I want to make stuff &lt;em&gt;simple&lt;/em&gt;, but the closer I get to implementing &lt;strong&gt;Systemd&lt;/strong&gt; functionality, the more I am forced to do things &lt;em&gt;&lt;strong&gt;Systemd&lt;/strong&gt; way&lt;/em&gt;. Actually, now it seems that there is really no other way of doing it given &lt;strong&gt;Systemd&lt;/strong&gt; &lt;em&gt;monolithicity&lt;/em&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GSoC - End of First Week</title>
