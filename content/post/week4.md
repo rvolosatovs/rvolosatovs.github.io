@@ -1,7 +1,7 @@
 +++
 categories = ["gsoc"]
 date = "2016-06-16T19:42:46+02:00"
-tags = ["gsoc", "browsix"]
+tags = ["gsoc", "browsix", "systemd"]
 title = "GSoC - Middle of Week 4"
 
 +++
