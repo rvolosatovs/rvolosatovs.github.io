@@ -6,8 +6,18 @@
     <description>Recent content in Posts on ~b1101</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 16 Jun 2016 19:42:46 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jun 2016 15:02:02 +0200</lastBuildDate>
     <atom:link href="https://b1101.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GSoC - End of Week 4</title>
+      <link>https://b1101.github.io/post/week4end/</link>
+      <pubDate>Sun, 19 Jun 2016 15:02:02 +0200</pubDate>
+      
+      <guid>https://b1101.github.io/post/week4end/</guid>
+      <description>&lt;p&gt;I managed to calm myself down and give the project a new &amp;lsquo;fresh&amp;rsquo; look. I came to a conclusion, that it&amp;rsquo;s not that bad at all. I did start major reorganisation of things, but now I also write tests and add comments on the way, as it looks like I am not going to make any significant changes to the structure anymore. This week I spent most of my time thinking and writing code on paper, but it was very beneficial regardless.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GSoC - Middle of Week 4</title>
