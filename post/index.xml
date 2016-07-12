@@ -6,8 +6,33 @@
     <description>Recent content in Posts on ~b1101</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Jun 2016 15:02:02 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jul 2016 20:02:37 +0200</lastBuildDate>
     <atom:link href="https://b1101.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GSoC - Week 7</title>
+      <link>https://b1101.github.io/post/week7/</link>
+      <pubDate>Mon, 11 Jul 2016 20:02:37 +0200</pubDate>
+      
+      <guid>https://b1101.github.io/post/week7/</guid>
+      <description>&lt;p&gt;Time is running fast. It&amp;rsquo;s been 50 days since I started working on &lt;a href=&#34;https://github.com/b1101/systemgo&#34;&gt;Systemgo&lt;/a&gt; (&lt;em&gt;unbeliveable&lt;/em&gt;). I have learned &lt;strong&gt;a hell of a lot&lt;/strong&gt; and, well, became a &lt;em&gt;gopher&lt;/em&gt; in the meantime.&lt;/p&gt;
+
+&lt;p&gt;I read code instead of news articles and watch videos about code instead of movies. Coding just feels&amp;hellip;&lt;em&gt;natural&lt;/em&gt; at this point, and the more so, the more excited I become about it.&lt;/p&gt;
+
+&lt;p&gt;Currently I&amp;rsquo;m in process of coming up with tests. Tests should only test the package they belong to and &lt;em&gt;preferably&lt;/em&gt; not rely on other packages. For example, there are these 2 closely related packages in my project - &lt;code&gt;unit&lt;/code&gt; and &lt;code&gt;system&lt;/code&gt;, where the former is used to deal with transforming an instance of &lt;code&gt;io.Reader&lt;/code&gt; into appropriate definition(Go does not have inheritance, but definitions of each unit type can differ, I worked around it using &lt;code&gt;reflect&lt;/code&gt; package, somewhat in the &lt;code&gt;json.Unamrshal&lt;/code&gt; fashion, check it out &lt;a href=&#34;https://github.com/b1101/systemgo/blob/master/unit/definition.go#L71-L128&#34;&gt;here&lt;/a&gt;).
+&lt;code&gt;System&lt;/code&gt; package parses unit files and determines, instance of which type from the &lt;code&gt;unit&lt;/code&gt; package to create according to the filename and later saves that as an instance of embedded &lt;code&gt;unit.Interface&lt;/code&gt; on a newly created &lt;code&gt;system.Unit&lt;/code&gt;.
+The load part of this is hard to test without using the unit package, as the type the definition is assigned to is hard-coded(I used a hashmap &lt;em&gt;suffix&lt;/em&gt;-&amp;gt;&lt;em&gt;constructor&lt;/em&gt; initially, but I got rid of constructors for the sake of simplicity).
+For everything else - &lt;a href=&#34;https://github.com/golang/mock&#34;&gt;Gomock&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Initially I created a testing library, where I basically just defined the message formatting, but yesterday I discovered &lt;a href=&#34;https://github.com/stretchr/testify&#34;&gt;Testify&lt;/a&gt;, which I used for the assertions. I actually found out about it some time ago, but was hesitant to try and boy was I wrong: tests became so much more readable and concise - take a &lt;a href=&#34;https://github.com/b1101/systemgo/commit/9eca0206b10948cf427d852e090a0366ca652b5b&#34;&gt;look&lt;/a&gt;. It turned out to be super easy to use and super effective.&lt;/p&gt;
+
+&lt;p&gt;By the way, I have done some cool things since my last blog post:
+- Wrote my first ever &lt;a href=&#34;https://github.com/b1101/systemgo/blob/master/Makefile&#34;&gt;Makefile&lt;/a&gt;
+- Setup Travis-CI
+- Setup Coveralls
+- Put a badge for anything I could possibly put one for(&lt;em&gt;yay&lt;/em&gt;)&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GSoC - End of Week 4</title>

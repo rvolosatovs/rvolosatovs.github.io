@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    GSoC - Week 7 | ~b1101
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://b1101.github.io/post/week7/"/>
+
+  
+  <link rel="stylesheet" href="/css/sanitize.css">
+  <link rel="stylesheet" href="/css/responsive.css">
+  <link rel="stylesheet" href="/css/highlight_monokai.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/custom.css">
+  
+  
+  <link href="https://b1101.github.io/index.xml" rel="alternate" type="application/rss+xml" title="~b1101" />
+  <link href="https://b1101.github.io/index.xml" rel="feed" type="application/rss+xml" title="~b1101" />
+
+  
+  
+
+
+</head>
+
+
+
+<body>
+<div class="container">
+
+  
+  <header role="banner">
+    <div class="row gutters">
+      <div id="site-title" class="col span_6">
+        <h1><a href="https://b1101.github.io/">~b1101</a></h1>
+        <h2>Musician in the world of algorithms surrounded by a $SHELL</h2>
+      </div>
+      <div id="social" class="col span_6">
+        <ul>
+          <li><a href="https://github.com/b1101" target="_blank">*github</a></li>
+          <li><a href="https://twitter.com/flat1101" target="_blank">*twitter</a></li>
+          <li><a href="https://www.linkedin.com/in/rvolosatovs" target="_blank">*linkedin</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </header>
+
+
+  
+  <main id="single" role="main">
+    <div class="article-header">
+  <h1><a href="https://b1101.github.io/post/week7/">GSoC - Week 7 </a></h1>
+  <div class="meta">
+    Jul 11, 2016 &nbsp;
+    
+      #<a href="/tags/gsoc">gsoc</a>&nbsp;
+    
+      #<a href="/tags/browsix">browsix</a>&nbsp;
+    
+      #<a href="/tags/go">go</a>&nbsp;
+    
+      #<a href="/tags/testify">testify</a>&nbsp;
+    
+      #<a href="/tags/gomock">gomock</a>&nbsp;
+    
+  </div>
+</div>
+
+
+    <article>
+      <p>Time is running fast. It&rsquo;s been 50 days since I started working on <a href="https://github.com/b1101/systemgo">Systemgo</a> (<em>unbeliveable</em>). I have learned <strong>a hell of a lot</strong> and, well, became a <em>gopher</em> in the meantime.</p>
+
+<p>I read code instead of news articles and watch videos about code instead of movies. Coding just feels&hellip;<em>natural</em> at this point, and the more so, the more excited I become about it.</p>
+
+<p>Currently I&rsquo;m in process of coming up with tests. Tests should only test the package they belong to and <em>preferably</em> not rely on other packages. For example, there are these 2 closely related packages in my project - <code>unit</code> and <code>system</code>, where the former is used to deal with transforming an instance of <code>io.Reader</code> into appropriate definition(Go does not have inheritance, but definitions of each unit type can differ, I worked around it using <code>reflect</code> package, somewhat in the <code>json.Unamrshal</code> fashion, check it out <a href="https://github.com/b1101/systemgo/blob/master/unit/definition.go#L71-L128">here</a>).
+<code>System</code> package parses unit files and determines, instance of which type from the <code>unit</code> package to create according to the filename and later saves that as an instance of embedded <code>unit.Interface</code> on a newly created <code>system.Unit</code>.
+The load part of this is hard to test without using the unit package, as the type the definition is assigned to is hard-coded(I used a hashmap <em>suffix</em>-&gt;<em>constructor</em> initially, but I got rid of constructors for the sake of simplicity).
+For everything else - <a href="https://github.com/golang/mock">Gomock</a>.</p>
+
+<p>Initially I created a testing library, where I basically just defined the message formatting, but yesterday I discovered <a href="https://github.com/stretchr/testify">Testify</a>, which I used for the assertions. I actually found out about it some time ago, but was hesitant to try and boy was I wrong: tests became so much more readable and concise - take a <a href="https://github.com/b1101/systemgo/commit/9eca0206b10948cf427d852e090a0366ca652b5b">look</a>. It turned out to be super easy to use and super effective.</p>
+
+<p>By the way, I have done some cool things since my last blog post:
+- Wrote my first ever <a href="https://github.com/b1101/systemgo/blob/master/Makefile">Makefile</a>
+- Setup Travis-CI
+- Setup Coveralls
+- Put a badge for anything I could possibly put one for(<em>yay</em>)</p>
+
+      
+      
+      
+    </article>
+    
+ <aside><div id="disqus_thread"></div></aside>
+
+<script type="text/javascript">
+     
+    var disqus_shortname = 'b1101';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+  </main>
+  
+  <nav class="pagination-single">
+    
+      <span class="previous">&larr; <a href="https://b1101.github.io/post/week4end/" rel="prev">GSoC - End of Week 4</a></span>
+    
+    
+  </nav>
+
+
+  
+  <footer role="contentinfo">
+    <div style="text-align:center;">
+      
+      &copy; Romāns Volosatovs
+    </div>
+  </footer>
+
+
+</div>
+
+<script src="/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-77952590-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
