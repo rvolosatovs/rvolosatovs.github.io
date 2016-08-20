@@ -1,7 +1,7 @@
-baseURL=                    "https://b1101.github.io/"
+baseURL=                    "https://rvolosatovs.github.io/"
 languageCode=               "en-us"
-title =                     "~b1101"
-disqusShortname = "b1101"
+title =                     "~rvolosatovs"
+disqusShortname = "rvolosatovs"
 googleAnalytics=            "UA-77952590-1"
 
 editor=                     "nvim"
@@ -12,12 +12,12 @@ pygmentsStyle=              "zenburn"
 
 [params]
 subtitle = "Musician in the world of algorithms surrounded by a $SHELL"
-copyright = "Romāns Volosatovs"
-facebook = "https://facebook.com/r.volosatovs"
-twitter = "https://twitter.com/flat1101"
+copyright = "Roman Volosatovs"
+facebook = "https://facebook.com/rvolosatovs"
+twitter = "https://twitter.com/rvolosatovs"
 linkedin = "https://www.linkedin.com/in/rvolosatovs"
-github = "https://github.com/b1101"
+github = "https://github.com/rvolosatovs"
 analytics=            "UA-77952590-1"
 showsRSS = false
 #shareThis = "619e5085-8af7-4190-95a1-2e01d1b2e51a"
-#profile = "/images/profile.png"
+profile = "/images/face.jpeg"
