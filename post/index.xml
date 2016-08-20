@@ -1,20 +1,50 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on ~b1101</title>
-    <link>https://b1101.github.io/post/</link>
-    <description>Recent content in Posts on ~b1101</description>
+    <title>Posts on ~rvolosatovs</title>
+    <link>https://rvolosatovs.github.io/post/</link>
+    <description>Recent content in Posts on ~rvolosatovs</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Jul 2016 20:02:37 +0200</lastBuildDate>
-    <atom:link href="https://b1101.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Aug 2016 12:58:27 +0300</lastBuildDate>
+    <atom:link href="https://rvolosatovs.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GSoC - Summing it up</title>
+      <link>https://rvolosatovs.github.io/post/the_end/</link>
+      <pubDate>Sat, 20 Aug 2016 12:58:27 +0300</pubDate>
+      
+      <guid>https://rvolosatovs.github.io/post/the_end/</guid>
+      <description>
+
+&lt;p&gt;GSoC came to an end. Wow. At &lt;code&gt;215 commits / 16,229 ++ / 12,164 --&lt;/code&gt; I think I finally got it right. It was amazing learning experience&lt;em&gt;(honestly, I did not really know how to code a year ago today)&lt;/em&gt;.
+I&amp;rsquo;ve had several unexpected issues during the work period - the most severe of them was probably that I worked on average for 10+ hours a day every day including weekends without making breaks and as a consequence to that, sometime near the end of July I came to a point, where I was not able to type anymore. Luckily, it all worked out fine at the end and now(even though it still hurts from time to time) I can work again.&lt;/p&gt;
+
+&lt;p&gt;I started writing a blog post on 29 July, which I was not able to finish because of the finger pain:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;For the last 2 weeks I was mostly working on the jobs and transactions part of the init system(kind of everything it is about). To be honest, it did not work out well at all(I did not push to the &lt;a href=&#34;https://github.com/b1101/systemgo/tree/jobs-and-transactions&#34;&gt;jobs-and-transactions&lt;/a&gt; branch for 11 days now&amp;hellip;). Today I finally sat down and took my time to not only read what Systemd &lt;a href=&#34;https://github.com/systemd/systemd/blob/0fbd465f4138dd2c3c7428c23cae117a7b56568d/src/core/manager.c#L1249-L1302&#34;&gt;does&lt;/a&gt;, but also thoroughly understand it(took me well over 3 hours - yea, I&amp;rsquo;m &lt;em&gt;slow&lt;/em&gt;, but I&amp;rsquo;m also not that good with C).&lt;/p&gt;
+
+&lt;p&gt;What I was trying to do at first, was recursively adding all the dependencies and then performing a DFS to construct a graph and check for possible errors(cycles etc.) and if there are no such - just concurrently start everything. That was the higher level idea - simple, right? I tried to stick to that until the end and refused to understand why Systemd introduced stuff like an explicit &lt;a href=&#34;https://github.com/systemd/systemd/blob/0fbd465f4138dd2c3c7428c23cae117a7b56568d/src/core/transaction.h#L29-L34&#34;&gt;transaction&lt;/a&gt;, &lt;a href=&#34;https://github.com/systemd/systemd/blob/0fbd465f4138dd2c3c7428c23cae117a7b56568d/src/core/job.h#L129-L171&#34;&gt;job&lt;/a&gt;, etc and a pretty big amount of lists and functions called to perform such a simple task.&lt;/p&gt;
+
+&lt;p&gt;Eventually I undertood, that both &amp;ldquo;job&amp;rdquo; and &amp;ldquo;transaction&amp;rdquo; types are required. So I introduced a &lt;code&gt;type jobType int&lt;/code&gt;, which is stored as a field on each &lt;code&gt;job&lt;/code&gt; struct (explicit types seemed to introduce a significant amount of overhead and unnecessary complexity). My idea was to recursively add everything and merge jobs on-the-fly. I even introduced a &lt;code&gt;func (j *job) mergeWith(other *job) (err error)&lt;/code&gt;, which would change the type of &lt;code&gt;j&lt;/code&gt; accordingly. If the recursion would fail on one of the required dependencies, it would return an error, errors for optional dependencies would be discarded. And so I&amp;rsquo;m typing all the stuff down, happy that I finally stopped thinking/writing on paper and started actually coding, everything is going well&amp;hellip;unil I realize&amp;hellip; How do I &amp;lsquo;unmerge&amp;rsquo; jobs if a recursion fails?
+Stuff Systemd does seemed to be &lt;em&gt;over-complicated&lt;/em&gt;&amp;hellip; Well, I was wrong. I fail to see how the stuff Systemd does can be made in a more efficient manner. Maybe it was me &lt;em&gt;over-simplifying&lt;/em&gt; things afterall?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;By the way, I ended up implementing an &lt;a href=&#34;https://github.com/rvolosatovs/systemgo/blob/master/system/transaction.go#L51-L143&#34;&gt;&lt;code&gt;add&lt;/code&gt;&lt;/a&gt; method on transaction, which was heavily inspired by the systemd &lt;a href=&#34;https://github.com/systemd/systemd/blob/master/src/core/transaction.c#L836-L1044&#34;&gt;&lt;code&gt;add_job_and_dependencies&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h1&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://gist.github.com/rvolosatovs/ebb776d43b9d7b0bfb1c4aac2ac3bf21&#34;&gt;this gist&lt;/a&gt; for description of the work done by me during GSoC2016&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>GSoC - Week 7</title>
-      <link>https://b1101.github.io/post/week7/</link>
+      <link>https://rvolosatovs.github.io/post/week7/</link>
       <pubDate>Mon, 11 Jul 2016 20:02:37 +0200</pubDate>
       
-      <guid>https://b1101.github.io/post/week7/</guid>
+      <guid>https://rvolosatovs.github.io/post/week7/</guid>
       <description>&lt;p&gt;Time is running fast. It&amp;rsquo;s been 50 days since I started working on &lt;a href=&#34;https://github.com/b1101/systemgo&#34;&gt;Systemgo&lt;/a&gt; (&lt;em&gt;unbeliveable&lt;/em&gt;). I have learned &lt;strong&gt;a hell of a lot&lt;/strong&gt; and, well, became a &lt;em&gt;gopher&lt;/em&gt; in the meantime.&lt;/p&gt;
 
 &lt;p&gt;I read code instead of news articles and watch videos about code instead of movies. Coding just feels&amp;hellip;&lt;em&gt;natural&lt;/em&gt; at this point, and the more so, the more excited I become about it.&lt;/p&gt;
@@ -36,20 +66,20 @@ For everything else - &lt;a href=&#34;https://github.com/golang/mock&#34;&gt;Gom
     
     <item>
       <title>GSoC - End of Week 4</title>
-      <link>https://b1101.github.io/post/week4end/</link>
+      <link>https://rvolosatovs.github.io/post/week4end/</link>
       <pubDate>Sun, 19 Jun 2016 15:02:02 +0200</pubDate>
       
-      <guid>https://b1101.github.io/post/week4end/</guid>
+      <guid>https://rvolosatovs.github.io/post/week4end/</guid>
       <description>&lt;p&gt;I managed to calm myself down and give the project a new &amp;lsquo;fresh&amp;rsquo; look. I came to a conclusion, that it&amp;rsquo;s not that bad at all. I did start major reorganisation of things, but now I also write tests and add comments on the way, as it looks like I am not going to make any significant changes to the structure anymore. This week I spent most of my time thinking and writing code on paper, but it was very beneficial regardless.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>GSoC - Middle of Week 4</title>
-      <link>https://b1101.github.io/post/week4/</link>
+      <link>https://rvolosatovs.github.io/post/week4/</link>
       <pubDate>Thu, 16 Jun 2016 19:42:46 +0200</pubDate>
       
-      <guid>https://b1101.github.io/post/week4/</guid>
+      <guid>https://rvolosatovs.github.io/post/week4/</guid>
       <description>&lt;p&gt;A LOT has happened during the week 2 and 3. I have even managed to work on the project while waiting for the doctor in a hospital emergency room. Long story short: I&amp;rsquo;ve been pretty busy lately, at least yesterday was this year&amp;rsquo;s last lecture for me and now I only have to pass 2 exams and that will be it.&lt;/p&gt;
 
 &lt;p&gt;Today Github reports 43 commits, 5,005 additions and 2,839 deletions from my side in the master branch of the &lt;a href=&#34;https://github.com/b1101/systemgo&#34;&gt;repo&lt;/a&gt;. The last comit was done 3 days ago and I am oficially stuck. I am not stuck in the sense that I do not know &lt;em&gt;what&lt;/em&gt; to do, I am stuck in the sense that I do not know &lt;em&gt;how&lt;/em&gt; to do it &lt;strong&gt;properly&lt;/strong&gt;. Currently I think that almost all of the structural decisions I came up with are totally useless and need to be redone.&lt;/p&gt;
@@ -60,10 +90,10 @@ For everything else - &lt;a href=&#34;https://github.com/golang/mock&#34;&gt;Gom
     
     <item>
       <title>GSoC - End of First Week</title>
-      <link>https://b1101.github.io/post/week1/</link>
+      <link>https://rvolosatovs.github.io/post/week1/</link>
       <pubDate>Sun, 29 May 2016 12:26:54 +0200</pubDate>
       
-      <guid>https://b1101.github.io/post/week1/</guid>
+      <guid>https://rvolosatovs.github.io/post/week1/</guid>
       <description>&lt;p&gt;The first week of GSoC is over. Turned out to be kind of long for me, as I could not wait until Monday and started working on Saturday evening already.&lt;/p&gt;
 
 &lt;p&gt;It goes pretty well, I&amp;rsquo;d say. Already managed to rewrite a lot of code I initially wrote, but units get properly parsed and some of them even get started, but most importantly I now know exactly what my next steps should be.&lt;/p&gt;
@@ -78,10 +108,10 @@ For everything else - &lt;a href=&#34;https://github.com/golang/mock&#34;&gt;Gom
     
     <item>
       <title>GSoC 2016 - Introduction</title>
-      <link>https://b1101.github.io/post/gsoc/</link>
+      <link>https://rvolosatovs.github.io/post/gsoc/</link>
       <pubDate>Thu, 19 May 2016 15:23:35 +0200</pubDate>
       
-      <guid>https://b1101.github.io/post/gsoc/</guid>
+      <guid>https://rvolosatovs.github.io/post/gsoc/</guid>
       <description>
 
 &lt;p&gt;Hi, my name is Roman, I am a First-year Software Science Bachelor student at &lt;a href=&#34;https://www.tue.nl/en/&#34;&gt;TU/e&lt;/a&gt;. This summer I am going to work on implementation of &lt;a href=&#34;https://summerofcode.withgoogle.com/projects/#6227933760847872&#34;&gt;init and IPC systems&lt;/a&gt; for &lt;a href=&#34;https://github.com/plasma-umass/browsix&#34;&gt;Browsix&lt;/a&gt;, which is a project developed in &lt;a href=&#34;http://plasma.cs.umass.edu/&#34;&gt;PLASMA-UMass&lt;/a&gt;.&lt;/p&gt;
