@@ -1,227 +1,509 @@
-
 <!DOCTYPE html>
-<html lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Roman Volosatovs</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style type="text/css">
+  /*
+   * Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
+   *
+   * CSS for making a resume with pandoc. Inspired by moderncv.
+   *
+   * This CSS document is delivered to you under the CC BY-SA 3.0 License.
+   * https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+   */
 
-  
-  <meta charset="UTF-8">
-  <title>
-    ~rvolosatovs
-  </title>
+  /* Whole document */
+  body {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      background: #FFFFFF;
+      padding: 10px 10px 10px 10px;
+  }
 
+  /* Title of the resume */
+  h1 {
+      font-size: 55px;
+      color: #757575;
+      text-align:center;
+      margin-bottom:15px;
+  }
+  /* h1:hover { */
+  /*     background-color: #757575; */
+  /*     color: #FFFFFF; */
+  /*     text-shadow: 1px 1px 1px #333; */
+  /* } */
 
-  
-  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+  /* Titles of categories */
+  h2 {
+      /* This is called "sectioncolor" in the ConTeXt stylesheet. */
+      color: #397249;
+  }
+  /* There is a bar just before each category */
+  h2:before {
+      content: "";
+      display: inline-block;
+      margin-right:1%;
+      width: 16%;
+      height: 10px;
+      /* This is called "rulecolor" in the ConTeXt stylesheet. */
+      background-color: #9CB770;
+  }
+  /* h2:hover { */
+  /*     background-color: #397249; */
+  /*     color: #FFFFFF; */
+  /*     text-shadow: 1px 1px 1px #333; */
+  /* } */
 
-  
-  <link rel="canonical" href="https://rvolosatovs.github.io/"/>
+  /* Definitions */
+  dt {
+      float: left;
+      clear: left;
+      width: 17%;
+      font-weight: bold;
+  }
+  dd {
+      margin-left: 17%;
+      margin-bottom:7px;
+  }
+  p {
+      margin-top:0;
+      margin-bottom:7px;
+  }
 
-  
-  <link rel="stylesheet" href="/css/sanitize.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-  <link rel="stylesheet" href="/css/highlight_monokai.css">
-  <link rel="stylesheet" href="/css/theme.css">
-  <link rel="stylesheet" href="/css/custom.css">
-  
-  
-  <link href="https://rvolosatovs.github.io/index.xml" rel="alternate" type="application/rss+xml" title="~rvolosatovs" />
-  <link href="https://rvolosatovs.github.io/index.xml" rel="feed" type="application/rss+xml" title="~rvolosatovs" />
+  /* Blockquotes */
+  blockquote {
+      text-align: center
+  }
 
-  
-  
+  /* Links */
+  a {
+      text-decoration: none;
+      color: #397249;
+  }
+  a:hover, a:active {
+      background-color: #397249;
+      color: #FFFFFF;
+      text-decoration: none;
+      text-shadow: 1px 1px 1px #333;
+  }
 
+  /* Horizontal separators */
+  hr {
+      color: #A6A6A6;
+  }
 
+  table {
+      width: 100%;
+  }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </head>
-
-
-
 <body>
-<div class="container">
-
-  
-  <header role="banner">
-    <div class="row gutters">
-      <div id="site-title" class="col span_6">
-        <h1><a href="https://rvolosatovs.github.io/">~rvolosatovs</a></h1>
-        <h2>Musician in the world of algorithms surrounded by a $SHELL</h2>
-      </div>
-      <div id="social" class="col span_6">
-        <ul>
-          <li><a href="https://github.com/rvolosatovs" target="_blank">*github</a></li>
-          <li><a href="https://twitter.com/rvolosatovs" target="_blank">*twitter</a></li>
-          <li><a href="https://www.linkedin.com/in/rvolosatovs" target="_blank">*linkedin</a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </header>
-
-
-
-
-<main id="index" role="main">
-  
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="https://rvolosatovs.github.io/post/the_end/">GSoC - Summing it up </a></h1>
-  <div class="meta">
-    Aug 20, 2016 &nbsp;
-    
-      #<a href="/tags/gsoc">gsoc</a>&nbsp;
-    
-      #<a href="/tags/browsix">browsix</a>&nbsp;
-    
-      #<a href="/tags/systemd">systemd</a>&nbsp;
-    
-      #<a href="/tags/systemgo">systemgo</a>&nbsp;
-    
-  </div>
-</div>
-
-  <p>GSoC came to an end. Wow. At <code>215 commits / 16,229 ++ / 12,164 --</code> I think I finally got it right. It was amazing learning experience<em>(honestly, I did not really know how to code a year ago today)</em>.</p>
-
-  <a href="https://rvolosatovs.github.io/post/the_end/" class="read-on">Read more→ </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="https://rvolosatovs.github.io/post/week7/">GSoC - Week 7 </a></h1>
-  <div class="meta">
-    Jul 11, 2016 &nbsp;
-    
-      #<a href="/tags/gsoc">gsoc</a>&nbsp;
-    
-      #<a href="/tags/browsix">browsix</a>&nbsp;
-    
-      #<a href="/tags/go">go</a>&nbsp;
-    
-      #<a href="/tags/testify">testify</a>&nbsp;
-    
-      #<a href="/tags/gomock">gomock</a>&nbsp;
-    
-  </div>
-</div>
-
-  Time is running fast. It&rsquo;s been 50 days since I started working on Systemgo (unbeliveable). I have learned a hell of a lot and, well, became a gopher in the meantime. I read code instead of news articles and watch videos about code instead of movies. Coding just feels&hellip;natural at this point, and the more so, the more excited I become about it. Currently I&rsquo;m in process of coming up with tests.
-  <a href="https://rvolosatovs.github.io/post/week7/" class="read-on">Read more→ </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="https://rvolosatovs.github.io/post/week4end/">GSoC - End of Week 4 </a></h1>
-  <div class="meta">
-    Jun 19, 2016 &nbsp;
-    
-      #<a href="/tags/gsoc">gsoc</a>&nbsp;
-    
-      #<a href="/tags/browsix">browsix</a>&nbsp;
-    
-  </div>
-</div>
-
-  I managed to calm myself down and give the project a new &lsquo;fresh&rsquo; look. I came to a conclusion, that it&rsquo;s not that bad at all. I did start major reorganisation of things, but now I also write tests and add comments on the way, as it looks like I am not going to make any significant changes to the structure anymore. This week I spent most of my time thinking and writing code on paper, but it was very beneficial regardless.
-  <a href="https://rvolosatovs.github.io/post/week4end/" class="read-on">Read more→ </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="https://rvolosatovs.github.io/post/week4/">GSoC - Middle of Week 4 </a></h1>
-  <div class="meta">
-    Jun 16, 2016 &nbsp;
-    
-      #<a href="/tags/gsoc">gsoc</a>&nbsp;
-    
-      #<a href="/tags/browsix">browsix</a>&nbsp;
-    
-      #<a href="/tags/systemd">systemd</a>&nbsp;
-    
-  </div>
-</div>
-
-  A LOT has happened during the week 2 and 3. I have even managed to work on the project while waiting for the doctor in a hospital emergency room. Long story short: I&rsquo;ve been pretty busy lately, at least yesterday was this year&rsquo;s last lecture for me and now I only have to pass 2 exams and that will be it. Today Github reports 43 commits, 5,005 additions and 2,839 deletions from my side in the master branch of the repo.
-  <a href="https://rvolosatovs.github.io/post/week4/" class="read-on">Read more→ </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="https://rvolosatovs.github.io/post/week1/">GSoC - End of First Week </a></h1>
-  <div class="meta">
-    May 29, 2016 &nbsp;
-    
-      #<a href="/tags/gsoc">gsoc</a>&nbsp;
-    
-      #<a href="/tags/browsix">browsix</a>&nbsp;
-    
-      #<a href="/tags/go">go</a>&nbsp;
-    
-  </div>
-</div>
-
-  <p>The first week of GSoC is over. Turned out to be kind of long for me, as I could not wait until Monday and started working on Saturday evening already.</p>
-
-  <a href="https://rvolosatovs.github.io/post/week1/" class="read-on">Read more→ </a>
-</div>
-
-  
-    <div class="summary">
-  <div class="article-header">
-  <h1><a href="https://rvolosatovs.github.io/post/gsoc/">GSoC 2016 - Introduction </a></h1>
-  <div class="meta">
-    May 19, 2016 &nbsp;
-    
-      #<a href="/tags/gsoc">gsoc</a>&nbsp;
-    
-      #<a href="/tags/browsix">browsix</a>&nbsp;
-    
-  </div>
-</div>
-
-  <p>Hi, my name is Roman, I am a First-year Software Science Bachelor student at <a href="https://www.tue.nl/en/">TU/e</a>. This summer I am going to work on implementation of <a href="https://summerofcode.withgoogle.com/projects/#6227933760847872">init and IPC systems</a> for <a href="https://github.com/plasma-umass/browsix">Browsix</a>, which is a project developed in <a href="http://plasma.cs.umass.edu/">PLASMA-UMass</a>.</p>
-
-  <a href="https://rvolosatovs.github.io/post/gsoc/" class="read-on">Read more→ </a>
-</div>
-
-  
-</main>
-
-
-
-<nav>
-  
-  
-    
-</nav>
-
-
-
-  
-  <footer role="contentinfo">
-    <div style="text-align:center;">
-      <img src="/images/face.jpeg" width="64" height="64"><br>
-      &copy; Roman Volosatovs
-    </div>
-  </footer>
-
-
-</div>
-
-<script src="/js/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-77952590-1', 'auto');
-	ga('send', 'pageview');
-</script>
-
+<h1 id="roman-volosatovs">Roman Volosatovs</h1>
+<p>GitHub: <a href="https://github.com/rvolosatovs/"
+target="_blank"><span class="citation"
+data-cites="rvolosatovs">@rvolosatovs</span></a> • LinkedIn: <a
+href="https://www.linkedin.com/in/rvolosatovs/" target="_blank"><span
+class="citation" data-cites="rvolosatovs">@rvolosatovs</span></a></p>
+<h2 id="professional-experience">Professional Experience</h2>
+<dl>
+<dt>2021-2023</dt>
+<dd>
+<strong>Profian:</strong> Principal Software Engineer / Network Service
+Tech Lead
+</dd>
+</dl>
+<p>Tech: Rust, C, Nix/NixOS, WebAssembly, TLS, cryptography, AWS,
+Equinix, OCI(<code>docker</code>, <code>podman</code>), GitHub, GitLab,
+Linux, systemd, Trusted Execution Environments(Intel SGX, AMD SEV-SNP),
+Nginx, OpenID Connect, REST, OpenAPI</p>
+<p>At Profian I worked on <a href="https://github.com/enarx/enarx"
+target="_blank">Enarx</a> - open-source confidential computing platform
+for secure execution of WebAssembly workloads in trusted execution
+environments and services around it.</p>
+<p>The company was closed due to lack of funding.</p>
+<ul>
+<li>Contributed significantly to design of the overall system</li>
+<li>Lead a team in development of network services on a tight schedule
+in accordance to business objectives</li>
+<li>Helped team members to overcome obstacles, blockers and meet
+deadlines</li>
+<li>Mentored the team in Rust, Nix, networking and system design</li>
+<li>Mentored students as part of internship programs</li>
+<li>Represented the company at KubeCon 2022, Open Source Summit Europe
+2022, <a href="https://fosdem.org/2023/schedule/event/cc_online_enarx/"
+target="_blank">FOSDEM 2023</a></li>
+<li>Represented the company at WASI SIG Registries working group
+meetings</li>
+<li>Designed and implemented:
+<ul>
+<li><a href="https://github.com/enarx-archive/sallyport"
+target="_blank">Sallyport</a> - secure and performant library for
+proxying syscalls</li>
+<li>Networking and virtual filesystem support for <a
+href="https://github.com/enarx/enarx" target="_blank">Enarx</a>
+execution layer</li>
+<li><a href="https://github.com/profianinc/drawbridge"
+target="_blank">Drawbridge</a> - a Merkle tree-based object
+registry</li>
+<li>Tooling to increase developer productivity:
+<ul>
+<li><a href="https://github.com/rvolosatovs/wash"
+target="_blank">Minimal WASI shell</a> to facilitate development and
+testing of virtual file systems</li>
+<li><a href="https://github.com/rvolosatovs/workflow-jobs"
+target="_blank">GitHub worklow job name generator</a></li>
+</ul></li>
+</ul></li>
+<li>Set up, maintained and continuosly improved organization-wide CI
+processes and release pipelines
+<ul>
+<li>Designed and implemented a <a
+href="https://github.com/rvolosatovs/nixify" target="_blank">Nix-based
+build library</a> for maintenance and CI performance</li>
+<li>Provided <a href="https://github.com/profianinc/images"
+target="_blank">Enarx image media (AMIs, ISOs, etc.)</a></li>
+</ul></li>
+<li>Brought up all <a
+href="https://github.com/profianinc/infrastructure/tree/1dc261fa0272b5ecef6e5cdc387216c2b527bf4e"
+target="_blank">initial server infrastructure using NixOS</a> on AWS and
+Equinix</li>
+<li>Contributed to various open-source projects, most notably:
+<ul>
+<li><a href="https://github.com/rust-lang/cargo/pull/11478"
+target="_blank"><code>rust-lang/cargo</code></a></li>
+<li><a
+href="https://github.com/bytecodealliance/wasmtime/pulls?q=author%3Arvolosatovs"
+target="_blank"><code>bytecodealliance/wasmtime</code></a></li>
+</ul></li>
+</ul>
+<dl>
+<dt>2021</dt>
+<dd>
+<strong>Docker Inc:</strong> Senior Software Engineer (Programmable OS
+team)
+</dd>
+</dl>
+<p>Tech: Go, Swift, C#, OCI(<code>docker</code>), Linux, Windows, MacOS,
+GitHub, Jira, REST, OpenAPI</p>
+<p>At Docker I worked on open-source Docker Engine and proprietary
+Docker Desktop application for Windows and Mac with focus on performance
+optimizations.</p>
+<ul>
+<li>Designed and implemented Linux cgroup-based start/stop feature
+released in Docker Desktop shortly after I had already left the
+company</li>
+<li>Contributed to <a
+href="https://github.com/moby/moby/pulls?q=is%3Apr+author%3Arvolosatovs"
+target="_blank"><code>moby/moby</code></a></li>
+</ul>
+<dl>
+<dt>2016-2021</dt>
+<dd>
+<strong>The Things Industries / The Things Network:</strong> Backend
+Engineer
+</dd>
+</dl>
+<p>Tech: Go, Lua, C, Python, JavaScript, gRPC, protocol buffers, TLS,
+cryptography, TCP, UDP, DNS, Linux, OCI(<code>docker</code>), InfluxDB,
+Redis 6, LoRaWAN, AWS, Azure, GitHub, GitLab, Travis CI, Nginx, IoT,
+edge devices, REST</p>
+<p>At The Things Industries / The Things Network I worked on open-source
+and proprietary parts of a distributed, global LoRaWAN IoT network
+operator stack.</p>
+<ul>
+<li>Was involved directly in technical conversations with customers</li>
+<li>Provided technical support to high-profile customers</li>
+<li>Managed and represented the company at The Things Conference
+organized yearly</li>
+<li>Designed the LoRaWAN specification as part of LoRa Alliance
+Technical Commitee</li>
+<li>Provided AWS-based SaaS offerings</li>
+<li>Implemented support for device roaming in collaboration with other
+LoRaWAN network operators</li>
+<li>Designed and implemented:
+<ul>
+<li>LoRaWAN specification-compliant, highly-available, distributed,
+performant microservice components for multi-tenant environments:
+<ul>
+<li><a
+href="https://github.com/rvolosatovs/lorawan-stack/tree/v3.12/pkg/networkserver"
+target="_blank">Network Server</a> - performing routing and MAC layer
+communication</li>
+<li><a
+href="https://github.com/rvolosatovs/lorawan-stack/tree/v3.12/pkg/joinserver"
+target="_blank">Join Server</a> - performing device provisioning, secure
+cryptographic key derivation, exchange and storage on HSM</li>
+</ul></li>
+<li>NOC - a proprietary component monitoring the state of the network
+handling serveral thousand requests per second</li>
+<li>Build tooling:
+<ul>
+<li><a href="https://github.com/rvolosatovs/docker-protobuf"
+target="_blank">Generic all-inclusive <code>protoc</code> OCI image</a>,
+which I eventually have inherited</li>
+</ul></li>
+<li>Tooling to increase developer productivity:
+<ul>
+<li><a
+href="https://github.com/TheThingsIndustries/protoc-gen-fieldmask"
+target="_blank"><code>protoc</code> plugin with fieldmask
+support</a></li>
+<li>Binary <a href="https://github.com/rvolosatovs/lorawan-codec"
+target="_blank">LoRaWAN frame decoder</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<dl>
+<dt>2016</dt>
+<dd>
+<strong>Eindhoven University of Technology:</strong> Software Engineer
+</dd>
+</dl>
+<p>Tech: Go, HTML, CSS, JavaScript, InfluxDB, OCI(<code>docker</code>),
+systemd, REST</p>
+<ul>
+<li>Designed, implemented and maintained a full-stack research
+application interfacing with Philips Hue lights used on-site in a
+hospital</li>
+</ul>
+<dl>
+<dt>2016</dt>
+<dd>
+<strong>Google Summer of Code</strong>: Intern
+</dd>
+</dl>
+<p>Tech: Go, C, TypeScript, systemd</p>
+<ul>
+<li>Designed and implemented <a
+href="https://github.com/plasma-umass/systemgo"
+target="_blank">systemgo</a> - init system in Go compatible with systemd
+unit file format for a browser-based operating system</li>
+</ul>
+<h2 id="hobby-experience">Hobby Experience</h2>
+<ul>
+<li>Nix and NixOS - I use Nix and NixOS on my personal machines/servers
+since 2016
+<ul>
+<li>Member of <a href="https://github.com/NixOS"
+target="_blank">NixOS</a> organization on Github</li>
+<li>Contribute to <a
+href="https://github.com/NixOS/nixpkgs/pulls?q=author%3Arvolosatovs"
+target="_blank"><code>NixOS/nixpkgs</code></a></li>
+<li><a
+href="https://fosdem.org/2023/schedule/event/nix_and_nixos_a_success_story/"
+target="_blank">FOSDEM 2023 talk about adopting Nix at Profian</a></li>
+</ul></li>
+<li><a href="https://github.com/rvolosatovs/rund"
+target="_blank"><code>rund</code></a> - A gRPC service in Go, which runs
+arbitrary Linux processes in a separate cgroup2 in an Alpine Linux
+container via <code>pivot_root</code> with mTLS authentication</li>
+<li><a href="https://github.com/rvolosatovs/speech2text"
+target="_blank">Offline speech-to-text tool using Deepspeech</a></li>
+<li><a href="https://github.com/rvolosatovs/libfvad-sys"
+target="_blank">Rust bindings to a C VAD library</a></li>
+<li><a href="https://github.com/rvolosatovs/fvad"
+target="_blank">Idiomatic Rust wrapper for the above</a></li>
+<li><a href="https://github.com/web-extensions-rs/web-extensions-sys"
+target="_blank">Rust bindings to WebExtensions JS API via WASM</a></li>
+<li><a href="https://github.com/web-extensions-rs/web-extensions"
+target="_blank">Idiomatic Rust wrapper for the above</a></li>
+<li>Julia - I use Julia for computations and occasional scripting, data
+analysis</li>
+<li>I use Linux and BSD derivatives on my machines exclusively since
+2012</li>
+</ul>
+<h2 id="education">Education</h2>
+<dl>
+<dt>2015-2018</dt>
+<dd>
+<strong>BSc, Software Science</strong>; Eindhoven University of
+Technology
+</dd>
+</dl>
+<ul>
+<li><a href="https://github.com/rvolosatovs/mooshy"
+target="_blank"><code>mooshy</code></a> - alongside my peers, developed
+a tool, which allows arbitrary code execution with escalated privileges
+utilizing ShellShock and Dirty CoW Linux kernel exploit</li>
+<li>Taken Declarative Programming course in university, which was
+completely based on Haskell with a big focus on category theory
+<ul>
+<li>Wrote a Lisp interpreter in Haskell with a study partner as part of
+the course</li>
+</ul></li>
+</ul>
+<h2 id="about-me">About me</h2>
+<ul>
+<li>Languages:
+<ul>
+<li>Russian - bilingual</li>
+<li>Latvian - bilingual</li>
+<li>English - proficient</li>
+<li>French - basic knowledge</li>
+<li>Dutch - basic knowledge</li>
+</ul></li>
+<li>Studied in a Jazz college part-time in parallel to high school
+studies</li>
+<li>Worked as a professional guitarist, guitar teacher and math teacher
+in the past</li>
+<li>I like various types of art, board games, powerlifting, hiking,
+snowboarding and nature</li>
+</ul>
 </body>
 </html>
-
