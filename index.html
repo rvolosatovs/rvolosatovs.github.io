@@ -262,41 +262,63 @@ href="https://www.linkedin.com/in/rvolosatovs/" target="_blank"><span
 class="citation" data-cites="rvolosatovs">@rvolosatovs</span></a></p>
 <h2 id="professional-experience">Professional Experience</h2>
 <dl>
-<dt>2023</dt>
+<dt>2023-2025</dt>
 <dd>
 <strong>Cosmonic:</strong> Principal Software Engineer
 </dd>
 </dl>
-<p>Tech: Rust, Nix, WebAssembly, Elixir, GitHub, NATS</p>
-<p>At Cosmonic I worked on <a
-href="https://github.com/wasmcloud/wasmcloud"
-target="_blank">wasmCloud</a> - open-source distributed WebAssembly
-execution platform.</p>
+<p>Tech: Rust, Go, C, Nix, WebAssembly, Elixir, GitHub, NATS.io, TCP/IP,
+UDP, HTTP, Kubernetes, gRPC, QUIC, OpenAPI, AWS</p>
+<p>At Cosmonic I am the WebAssembly runtime expert and perform most of
+my work as part of the Bytecode Alliance.</p>
+<p>Primarily, I build and maintain open-source tooling and low-level
+libraries around WebAssembly. For example, I have designed and
+implemented:</p>
 <ul>
-<li><p>Converted several release pipelines to Nix reducing build times
-from 3-4 hours to 30 minutes at most for a full rebuild.</p></li>
-<li><p>Simplified distribution of an Elixir application (<a
-href="https://github.com/wasmcloud/wasmcloud-otp"
-target="_blank">wasmcloud-otp</a>), converting a tarball-based release
-dependent on ncurses and OpenSSL, to a single self-extracting binary
-with no dependencies for aarch64/x86_64 Linux (both GNU and Musl
-toolchains), aarch64/x86_64 Darwin and Windows MSVC.</p></li>
-<li><p>Represented the company at WASI SIG Registries working group
-meetings as well as Wasm component model and Wasmtime development
-meetings.</p></li>
-<li><p>Represented the company at KubeCon 2023</p></li>
-<li><p>Contributed to various open-source projects, most notably:</p>
-<ul>
-<li><a href="https://github.com/bytecodealliance/wit-deps"
-target="_blank"><code>bytecodealliance/wit-deps</code></a> (developed
-from scratch at my own initiative to fulfill a temporary feature gap in
-existing Wasm tooling, adopted by various members of Bytecode
-Alliance)</li>
-<li><a
-href="https://github.com/bytecodealliance/wasmtime/pulls?q=author%3Arvolosatovs"
-target="_blank"><code>bytecodealliance/wasmtime</code></a></li>
-</ul></li>
+<li>transport-agnostic general-purpose RPC framework based on WIT - <a
+href="https://github.com/bytecodealliance/wrpc"
+target="_blank"><code>bytecodealliance/wrpc</code></a>. For more
+information, see a <a href="https://www.youtube.com/watch?v=EYqZYXjCvkY"
+target="_blank">talk I gave with a colleague at WasmCon 2024</a></li>
+<li>Wasm canonical ABI for native code - <a
+href="https://github.com/wasmcloud/cabish"
+target="_blank"><code>wasmcloud/cabish</code></a>, streamlining native
+code integration with WebAssembly</li>
+<li>Wasm component testing and plugin framework - <a
+href="https://github.com/wasmcloud/wadge"
+target="_blank"><code>wasmcloud/wadge</code></a></li>
+<li>WIT package manager - <a
+href="https://github.com/bytecodealliance/wit-deps"
+target="_blank"><code>bytecodealliance/wit-deps</code></a>, developed to
+fulfill a temporary feature gap in existing Wasm tooling, adopted by
+various members of Bytecode Alliance</li>
+<li>high-performance, multi-tenant, embeddable WebAssembly runtime for
+cloud-native applications - <a
+href="https://github.com/rvolosatovs/wasmlet"
+target="_blank"><code>rvolosatovs/wasmlet</code></a>,</li>
 </ul>
+<p>These projects are used by various companies and individuals and
+serve as the basis on which the core product of Cosmonic is built - <a
+href="https://github.com/wasmcloud/wasmcloud"
+target="_blank"><code>wasmcloud/wasmcloud</code></a>, a distributed
+WebAssembly execution platform.</p>
+<p>I am heavily involved in development of <a
+href="https://github.com/bytecodealliance/wasmtime/pulls?q=author%3Arvolosatovs"
+target="_blank"><code>bytecodealliance/wasmtime</code></a> - the leading
+WebAssembly runtime, which I am a maitainer of. For example, I was
+involved in design and development of wasip2 and wasip3.</p>
+<p>Additionally, I train junior developers and lead a small team helping
+other businesses benefit from latest WebAssembly features and optimize
+their WebAssembly runtimes.</p>
+<p>As part of working at Cosmonic, I also completed a contract work for
+<a href="https://github.com/near/nearcore/pulls?q=author%3Arvolosatovs+"
+target="_blank">NEAR blockchain</a>, helping them adopt Wasmtime,
+introducing component model, optimizing their gas instrumentation and
+overall performance.</p>
+<p>Additionally, I actively represent the company at various w3c
+WebAssembly and WASI working group meetings, WASI, component model and
+Wasmtime development meetings as well as conferences, such as KubeCon,
+WasmCon and Wasm I/O.</p>
 <dl>
 <dt>2021-2023</dt>
 <dd>
@@ -304,10 +326,11 @@ target="_blank"><code>bytecodealliance/wasmtime</code></a></li>
 Tech Lead
 </dd>
 </dl>
-<p>Tech: Rust, C, Nix/NixOS, WebAssembly, TLS, cryptography, AWS,
-Equinix, OCI(<code>docker</code>, <code>podman</code>), GitHub, GitLab,
-Linux, systemd, Trusted Execution Environments(Intel SGX, AMD SEV-SNP),
-Nginx, OpenID Connect, REST, OpenAPI</p>
+<p>Tech: Rust, C, Nix/NixOS, WebAssembly, TLS, TCP/IP, HTTP,
+cryptography, AWS, Equinix, OCI(<code>docker</code>,
+<code>podman</code>), GitHub, GitLab, Linux, systemd, Trusted Execution
+Environments(Intel SGX, AMD SEV-SNP), Nginx, OpenID Connect, REST,
+OpenAPI</p>
 <p>At Profian I worked on <a href="https://github.com/enarx/enarx"
 target="_blank">Enarx</a> - open-source confidential computing platform
 for secure execution of WebAssembly workloads in trusted execution
@@ -396,9 +419,9 @@ Engineer
 </dd>
 </dl>
 <p>Tech: Go, Lua, C, Python, JavaScript, gRPC, protocol buffers, TLS,
-cryptography, TCP, UDP, DNS, Linux, OCI(<code>docker</code>), InfluxDB,
-Redis 6, LoRaWAN, AWS, Azure, GitHub, GitLab, Travis CI, Nginx, IoT,
-edge devices, REST</p>
+TCP/IP, UDP, DNS, Linux, cryptography, OCI(<code>docker</code>),
+InfluxDB, Redis 6, LoRaWAN, AWS, Azure, GitHub, GitLab, Travis CI,
+Nginx, IoT, edge devices, REST</p>
 <p>At The Things Industries / The Things Network I worked on open-source
 and proprietary parts of a distributed, global LoRaWAN IoT network
 operator stack.</p>
