@@ -267,58 +267,64 @@ class="citation" data-cites="rvolosatovs">@rvolosatovs</span></a></p>
 <strong>Cosmonic:</strong> Principal Software Engineer
 </dd>
 </dl>
-<p>Tech: Rust, Go, C, Nix, WebAssembly, Elixir, GitHub, NATS.io, TCP/IP,
-UDP, HTTP, Kubernetes, gRPC, QUIC, OpenAPI, AWS</p>
-<p>At Cosmonic I am the WebAssembly runtime expert and perform most of
-my work as part of the Bytecode Alliance.</p>
+<p>Tech: Rust, Go, C, Nix, WebAssembly, TCP/IP, UDP, QUIC, HTTP, gRPC,
+NATS.io, Kubernetes, Elixir, OpenAPI, AWS, GitHub</p>
+<p>At Cosmonic I serve as the WebAssembly runtime expert, focusing on
+performance-critical low-level systems programming as part of the
+Bytecode Alliance.</p>
 <p>Primarily, I build and maintain open-source tooling and low-level
 libraries around WebAssembly in Rust. For example, I have designed and
 implemented:</p>
 <ul>
-<li>transport-agnostic general-purpose RPC framework based on WIT - <a
-href="https://github.com/bytecodealliance/wrpc"
-target="_blank"><code>bytecodealliance/wrpc</code></a>. For more
-information, see a <a href="https://www.youtube.com/watch?v=EYqZYXjCvkY"
-target="_blank">talk I gave with a colleague at WasmCon 2024</a></li>
-<li>Wasm canonical ABI for native code - <a
-href="https://github.com/wasmcloud/cabish"
-target="_blank"><code>wasmcloud/cabish</code></a>, streamlining native
-code integration with WebAssembly</li>
-<li>Wasm component testing and plugin framework - <a
-href="https://github.com/wasmcloud/wadge"
-target="_blank"><code>wasmcloud/wadge</code></a></li>
-<li>WIT package manager - <a
-href="https://github.com/bytecodealliance/wit-deps"
-target="_blank"><code>bytecodealliance/wit-deps</code></a>, developed to
-fulfill a temporary feature gap in existing Wasm tooling, adopted by
-various members of Bytecode Alliance</li>
-<li>high-performance, multi-tenant, embeddable WebAssembly runtime for
-cloud-native applications - <a
-href="https://github.com/rvolosatovs/wasmlet"
-target="_blank"><code>rvolosatovs/wasmlet</code></a>,</li>
+<li><strong><a href="https://github.com/bytecodealliance/wrpc"
+target="_blank"><code>bytecodealliance/wrpc</code></a></strong> -
+transport-agnostic, high-performance general-purpose RPC framework
+leveraging WebAssembly Interface Types. Presented at <a
+href="https://www.youtube.com/watch?v=EYqZYXjCvkY"
+target="_blank">WasmCon 2024</a></li>
+<li><strong><a href="https://github.com/rvolosatovs/wasmlet"
+target="_blank"><code>rvolosatovs/wasmlet</code></a></strong> -
+high-performance, multi-tenant, embeddable WebAssembly runtime optimized
+for cloud-native applications with focus on low-latency execution,
+security and deployment density</li>
+<li><strong><a href="https://github.com/wasmcloud/cabish"
+target="_blank"><code>wasmcloud/cabish</code></a></strong> - Wasm
+canonical ABI implementation for native code, enabling interoperability
+between WebAssembly and native applications</li>
+<li><strong><a href="https://github.com/wasmcloud/wadge"
+target="_blank"><code>wasmcloud/wadge</code></a></strong> - component
+testing and plugin framework for Wasm</li>
+<li><strong><a href="https://github.com/bytecodealliance/wit-deps"
+target="_blank"><code>bytecodealliance/wit-deps</code></a></strong> -
+package manager adopted across Bytecode Alliance projects</li>
 </ul>
-<p>These projects are used by various companies and individuals and
-serve as the basis on which the core product of Cosmonic is built - <a
+<p>I have migrated the core product of Cosmonic - <a
 href="https://github.com/wasmcloud/wasmcloud"
 target="_blank"><code>wasmcloud/wasmcloud</code></a>, a distributed
-WebAssembly execution platform.</p>
-<p>I am heavily involved in development of <a
+WebAssembly execution platform from Elixir to Rust for improved
+performance and maintainability.</p>
+<p>I am a maintainer of <a
 href="https://github.com/bytecodealliance/wasmtime/pulls?q=author%3Arvolosatovs"
-target="_blank"><code>bytecodealliance/wasmtime</code></a> - the leading
-WebAssembly runtime, which I am a maitainer of. For example, I was
-involved in design and development of wasip2 and wasip3.</p>
-<p>Additionally, I train junior developers and lead a small team helping
-other businesses benefit from latest WebAssembly features and optimize
-their WebAssembly runtimes.</p>
-<p>As part of working at Cosmonic, I also completed a contract work for
-<a href="https://github.com/near/nearcore/pulls?q=author%3Arvolosatovs+"
-target="_blank">NEAR blockchain</a>, helping them adopt Wasmtime,
-introducing component model, optimizing their gas instrumentation and
-overall performance.</p>
-<p>Additionally, I actively represent the company at various w3c
-WebAssembly and WASI working group meetings, WASI, component model and
-Wasmtime development meetings as well as conferences, such as KubeCon,
-WasmCon and Wasm I/O.</p>
+target="_blank"><code>bytecodealliance/wasmtime</code></a> - the
+industry-leading WebAssembly runtime. Contributed to WASI Preview 2 and
+Preview 3 specification and implementation.</p>
+<p>I completed contract work for <a
+href="https://github.com/near/nearcore/pulls?q=author%3Arvolosatovs+"
+target="_blank">NEAR blockchain</a>, achieving <strong>14x performance
+improvement</strong> in their WebAssembly runtime:</p>
+<ul>
+<li>Migrated runtime backend to Wasmtime, improving security,
+standard-compliance and performance</li>
+<li>Optimized gas instrumentation overhead via WebAssembly binary
+analysis and patching</li>
+<li>Conducted extensive performance profiling, bottleneck analysis, and
+hot path optimization</li>
+<li>Introduced WebAssembly component model support</li>
+</ul>
+<p>I actively represent Cosmonic at various w3c WebAssembly and WASI
+working group meetings, WASI, component model and Wasmtime development
+meetings as well as conferences, such as KubeCon, WasmCon and Wasm
+I/O.</p>
 <dl>
 <dt>2021-2023</dt>
 <dd>
@@ -326,10 +332,10 @@ WasmCon and Wasm I/O.</p>
 Tech Lead
 </dd>
 </dl>
-<p>Tech: Rust, C, Nix/NixOS, WebAssembly, TLS, TCP/IP, HTTP,
-cryptography, AWS, Equinix, OCI(<code>docker</code>,
-<code>podman</code>), GitHub, GitLab, Linux, systemd, Trusted Execution
-Environments(Intel SGX, AMD SEV-SNP), Nginx, OpenID Connect, REST,
+<p>Tech: Rust, C, Nix/NixOS, WebAssembly, TCP/IP, HTTP, TLS,
+cryptography, Linux, systemd, Trusted Execution Environments (Intel SGX,
+AMD SEV-SNP), AWS, Equinix, OCI (<code>docker</code>,
+<code>podman</code>), GitHub, GitLab, Nginx, OpenID Connect, REST,
 OpenAPI</p>
 <p>At Profian I worked on <a href="https://github.com/enarx/enarx"
 target="_blank">Enarx</a> - open-source confidential computing platform
@@ -338,8 +344,8 @@ environments and services around it.</p>
 <p>The company was closed due to lack of funding.</p>
 <ul>
 <li>Contributed significantly to design of the overall system</li>
-<li>Lead a team in development of network services on a tight schedule
-in accordance to business objectives</li>
+<li>Led a team in development of network services on a tight schedule in
+accordance to business objectives</li>
 <li>Helped team members to overcome obstacles, blockers and meet
 deadlines</li>
 <li>Mentored the team in Rust, Nix, networking and system design</li>
@@ -351,9 +357,10 @@ target="_blank">FOSDEM 2023</a></li>
 meetings</li>
 <li>Designed and implemented:
 <ul>
-<li><a href="https://github.com/enarx-archive/sallyport"
-target="_blank">Sallyport</a> - secure and performant library for
-proxying syscalls</li>
+<li><strong><a href="https://github.com/enarx-archive/sallyport"
+target="_blank">Sallyport</a></strong> - high-performance syscall
+proxying library with minimal overhead, enabling secure communication
+between trusted execution environments and host OS</li>
 <li>Networking and virtual filesystem support for <a
 href="https://github.com/enarx/enarx" target="_blank">Enarx</a>
 execution layer</li>
@@ -369,7 +376,7 @@ testing of virtual file systems</li>
 target="_blank">GitHub worklow job name generator</a></li>
 </ul></li>
 </ul></li>
-<li>Set up, maintained and continuosly improved organization-wide CI
+<li>Set up, maintained and continuously improved organization-wide CI
 processes and release pipelines
 <ul>
 <li>Designed and implemented a <a
@@ -398,15 +405,14 @@ target="_blank"><code>bytecodealliance/wasmtime</code></a></li>
 team)
 </dd>
 </dl>
-<p>Tech: Go, Swift, C#, OCI(<code>docker</code>), Linux, Windows, MacOS,
-GitHub, Jira, REST, OpenAPI</p>
+<p>Tech: Go, C#, Swift, Linux, Windows, MacOS, OCI
+(<code>docker</code>), GitHub, Jira, REST, OpenAPI</p>
 <p>At Docker I worked on open-source Docker Engine and proprietary
 Docker Desktop application for Windows and Mac with focus on performance
 optimizations.</p>
 <ul>
 <li>Designed and implemented Linux cgroup-based start/stop feature
-released in Docker Desktop shortly after I had already left the
-company</li>
+released in Docker Desktop shortly after I left the company</li>
 <li>Contributed to <a
 href="https://github.com/moby/moby/pulls?q=is%3Apr+author%3Arvolosatovs"
 target="_blank"><code>moby/moby</code></a></li>
@@ -418,10 +424,10 @@ target="_blank"><code>moby/moby</code></a></li>
 Engineer
 </dd>
 </dl>
-<p>Tech: Go, Lua, C, Python, JavaScript, gRPC, protocol buffers, TLS,
-TCP/IP, UDP, DNS, Linux, cryptography, OCI(<code>docker</code>),
-InfluxDB, Redis 6, LoRaWAN, AWS, Azure, GitHub, GitLab, Travis CI,
-Nginx, IoT, edge devices, REST</p>
+<p>Tech: Go, C, Lua, Python, JavaScript, TCP/IP, UDP, DNS, gRPC,
+protocol buffers, TLS, Linux, cryptography, LoRaWAN, InfluxDB, Redis 6,
+OCI (<code>docker</code>), AWS, Azure, GitHub, GitLab, Travis CI, Nginx,
+IoT, edge devices, REST</p>
 <p>At The Things Industries / The Things Network I worked on open-source
 and proprietary parts of a distributed, global LoRaWAN IoT network
 operator stack.</p>
@@ -438,24 +444,24 @@ LoRaWAN network operators</li>
 <li>Designed and implemented:
 <ul>
 <li>LoRaWAN specification-compliant, highly-available, distributed,
-performant microservice components for multi-tenant environments:
+high-performance microservice components for multi-tenant environments:
 <ul>
 <li><a
 href="https://github.com/rvolosatovs/lorawan-stack/tree/v3.12/pkg/networkserver"
-target="_blank">Network Server</a> - performing routing and MAC layer
-communication</li>
+target="_blank">Network Server</a> - low-level packet routing and MAC
+layer protocol implementation</li>
 <li><a
 href="https://github.com/rvolosatovs/lorawan-stack/tree/v3.12/pkg/joinserver"
-target="_blank">Join Server</a> - performing device provisioning, secure
-cryptographic key derivation, exchange and storage on HSM</li>
+target="_blank">Join Server</a> - performing secure device provisioning
+with cryptographic key derivation, exchange and HSM-backed storage</li>
 </ul></li>
 <li>NOC - a proprietary component monitoring the state of the network
-handling serveral thousand requests per second</li>
+handling several thousand requests per second</li>
 <li>Build tooling:
 <ul>
 <li><a href="https://github.com/rvolosatovs/docker-protobuf"
 target="_blank">Generic all-inclusive <code>protoc</code> OCI image</a>,
-which I eventually have inherited</li>
+which I eventually inherited</li>
 </ul></li>
 <li>Tooling to increase developer productivity:
 <ul>
@@ -474,7 +480,7 @@ target="_blank">LoRaWAN frame decoder</a></li>
 <strong>Eindhoven University of Technology:</strong> Software Engineer
 </dd>
 </dl>
-<p>Tech: Go, HTML, CSS, JavaScript, InfluxDB, OCI(<code>docker</code>),
+<p>Tech: Go, JavaScript, HTML, CSS, InfluxDB, OCI (<code>docker</code>),
 systemd, REST</p>
 <ul>
 <li>Designed, implemented and maintained a full-stack research
@@ -537,9 +543,10 @@ Technology
 </dl>
 <ul>
 <li><a href="https://github.com/rvolosatovs/mooshy"
-target="_blank"><code>mooshy</code></a> - alongside my peers, developed
-a tool, which allows arbitrary code execution with escalated privileges
-utilizing ShellShock and Dirty CoW Linux kernel exploit</li>
+target="_blank"><code>mooshy</code></a> - developed kernel-level exploit
+framework leveraging ShellShock and Dirty CoW vulnerabilities,
+demonstrating deep understanding of Linux kernel internals, and
+system-level security mechanisms</li>
 <li>Taken Declarative Programming course in university, which was
 completely based on Haskell with a big focus on category theory
 <ul>
