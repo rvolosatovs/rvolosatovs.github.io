@@ -7,9 +7,6 @@
   <title>Roman Volosatovs</title>
   <style>
     html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
       color: #1a1a1a;
       background-color: #fdfdfd;
     }
@@ -28,13 +25,16 @@
     @media (max-width: 600px) {
       body {
         font-size: 0.9em;
-        padding: 1em;
+        padding: 12px;
       }
       h1 {
         font-size: 1.8em;
       }
     }
     @media print {
+      html {
+        background-color: white;
+      }
       body {
         background-color: transparent;
         color: black;
@@ -58,6 +58,10 @@
       color: #1a1a1a;
     }
     img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -84,9 +88,10 @@
       color: #606060;
     }
     code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
+      hyphens: manual;
     }
     pre {
       margin: 1em 0;
@@ -102,8 +107,8 @@
      overflow: visible;
     }
     hr {
-      background-color: #1a1a1a;
       border: none;
+      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -148,10 +153,18 @@
     }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <style type="text/css">
@@ -165,20 +178,30 @@
    */
 
   /* Whole document */
+  html {
+      background: #f4f6f3;
+  }
+
   body {
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin: 24px auto;
       background: #FFFFFF;
-      padding: 10px 10px 10px 10px;
+      padding: 40px 48px;
+      color: #222222;
+      font-size: 15px;
+      line-height: 1.45;
+      box-shadow: 0 8px 30px rgba(36, 50, 38, 0.10);
   }
 
   /* Title of the resume */
   h1 {
-      font-size: 55px;
+      font-size: 42px;
       color: #757575;
       text-align:center;
-      margin-bottom:15px;
+      margin-top: 0;
+      margin-bottom: 14px;
+      line-height: 1.05;
   }
   /* h1:hover { */
   /*     background-color: #757575; */
@@ -190,14 +213,20 @@
   h2 {
       /* This is called "sectioncolor" in the ConTeXt stylesheet. */
       color: #397249;
+      font-size: 24px;
+      line-height: 1.15;
+      margin-top: 30px;
+      margin-bottom: 14px;
+      break-after: avoid;
   }
   /* There is a bar just before each category */
   h2:before {
       content: "";
       display: inline-block;
-      margin-right:1%;
-      width: 16%;
-      height: 10px;
+      margin-right: 12px;
+      width: 92px;
+      height: 8px;
+      vertical-align: middle;
       /* This is called "rulecolor" in the ConTeXt stylesheet. */
       background-color: #9CB770;
   }
@@ -208,19 +237,44 @@
   /* } */
 
   /* Definitions */
+  dl {
+      display: grid;
+      grid-template-columns: minmax(120px, 0.22fr) 1fr;
+      column-gap: 18px;
+      align-items: baseline;
+      margin: 18px 0 6px;
+  }
+
   dt {
-      float: left;
-      clear: left;
-      width: 17%;
       font-weight: bold;
+      line-height: 1.25;
   }
   dd {
-      margin-left: 17%;
-      margin-bottom:7px;
+      margin-left: 0;
+      margin-bottom: 0;
   }
   p {
       margin-top:0;
-      margin-bottom:7px;
+      margin-bottom: 8px;
+  }
+
+  ul {
+      margin-top: 8px;
+      margin-bottom: 16px;
+      padding-left: 22px;
+  }
+
+  li {
+      margin-bottom: 3px;
+  }
+
+  li > ul {
+      margin-top: 3px;
+      margin-bottom: 3px;
+  }
+
+  code {
+      font-size: 0.92em;
   }
 
   /* Blockquotes */
@@ -232,6 +286,7 @@
   a {
       text-decoration: none;
       color: #397249;
+      overflow-wrap: anywhere;
   }
   a:hover, a:active {
       background-color: #397249;
@@ -248,10 +303,46 @@
   table {
       width: 100%;
   }
+
+  @media (max-width: 720px) {
+      body {
+          margin: 0;
+          padding: 20px 18px;
+          box-shadow: none;
+      }
+
+      h1 {
+          font-size: 34px;
+      }
+
+      h2 {
+          font-size: 21px;
+      }
+
+      h2:before {
+          width: 48px;
+      }
+
+      dl {
+          grid-template-columns: 1fr;
+          row-gap: 3px;
+      }
+  }
+
+  @media print {
+      html {
+          background: #FFFFFF;
+      }
+
+      body {
+          margin: 0;
+          padding: 0;
+          box-shadow: none;
+          font-size: 10.5pt;
+          line-height: 1.32;
+      }
+  }
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <h1 id="roman-volosatovs">Roman Volosatovs</h1>
@@ -261,24 +352,75 @@ data-cites="rvolosatovs">@rvolosatovs</span></a> • LinkedIn: <a
 href="https://www.linkedin.com/in/rvolosatovs/" target="_blank"><span
 class="citation" data-cites="rvolosatovs">@rvolosatovs</span></a></p>
 <h2 id="summary">Summary</h2>
-<p>Rust, Go, Nix, Wasm and Linux expert with 10 years of professional
-experience specializing in low-level systems programming, networking,
-distributed systems and high-performance computing.</p>
+<p>Principal systems engineer with 10 years of experience building
+performance-critical infrastructure in Rust, Go, C, Nix, Linux,
+WebAssembly runtimes, networking and distributed systems. Maintainer of
+Wasmtime and Bytecode Alliance ecosystem projects; led runtime,
+security, networking and cloud-native platform work with measurable
+impact, including a 14x WebAssembly runtime performance improvement for
+NEAR.</p>
+<h2 id="selected-strengths">Selected Strengths</h2>
+<ul>
+<li>Systems: Linux internals, networking, syscall boundaries, cgroups,
+systemd, runtimes, WebAssembly, performance profiling</li>
+<li>Languages: Rust, Go, C, Nix, WAT</li>
+<li>Distributed systems: RPC, NATS.io, gRPC, Kubernetes, multi-tenant
+platforms, high-throughput services</li>
+<li>Security: cryptography, TLS, confidential computing, TEE isolation,
+HSM-backed key storage, runtime sandboxing, endpoint telemetry</li>
+<li>AI and tooling: MCP, OpenAPI, AI-assisted engineering workflows,
+CI/CD, developer productivity tooling</li>
+<li>Leadership: principal-level architecture, technical direction,
+mentoring, standards bodies, conference talks, open-source
+maintenance</li>
+</ul>
 <h2 id="professional-experience">Professional Experience</h2>
 <dl>
-<dt>2023-2026</dt>
+<dt>Mar 2026 - May 2026</dt>
+<dd>
+<strong>Helmet Security, Inc.:</strong> Principal Software Engineer
+</dd>
+</dl>
+<p>Tech: Rust, Linux, macOS, Windows, eBPF, Endpoint Security, ETW, MCP,
+OpenTelemetry, sandboxing, network proxying, enterprise security
+monitoring</p>
+<ul>
+<li>Worked on a cross-platform enterprise AI security monitoring
+solution across macOS, Windows and Linux.</li>
+<li>Built and integrated endpoint telemetry collection using macOS
+Endpoint Security, Windows ETW and Linux eBPF.</li>
+<li>Worked on sandboxing and network proxying components for secure,
+observable execution environments.</li>
+</ul>
+<dl>
+<dt>Feb 2023 - Feb 2026</dt>
 <dd>
 <strong>Cosmonic:</strong> Principal Software Engineer
 </dd>
 </dl>
 <p>Tech: Rust, Go, C, Nix, WebAssembly, TCP/IP, UDP, QUIC, HTTP, gRPC,
-NATS.io, Kubernetes, Elixir, OpenAPI, AWS, GitHub</p>
-<p>At Cosmonic I serve as the WebAssembly runtime expert, focusing on
+NATS.io, Kubernetes, OpenTelemetry, Elixir, OpenAPI, AWS, GitHub</p>
+<ul>
+<li>Served as WebAssembly runtime expert, focusing on
 performance-critical low-level systems programming as part of the
-Bytecode Alliance.</p>
-<p>Primarily, I build and maintain open-source tooling and low-level
-libraries around WebAssembly in Rust. For example, I have designed and
-implemented:</p>
+Bytecode Alliance.</li>
+<li>Maintainer of <a
+href="https://github.com/bytecodealliance/wasmtime/pulls?q=author%3Arvolosatovs"
+target="_blank"><code>bytecodealliance/wasmtime</code></a>, the
+industry-leading WebAssembly runtime.</li>
+<li>Completed a $250,000 contract for <a
+href="https://github.com/near/nearcore/pulls?q=author%3Arvolosatovs+"
+target="_blank">NEAR blockchain</a> in 6 months, achieving a 14x
+performance improvement in their WebAssembly runtime through profiling,
+binary analysis, gas instrumentation optimization and component-model
+support.</li>
+<li>Migrated the core product of Cosmonic, <a
+href="https://github.com/wasmcloud/wasmcloud"
+target="_blank"><code>wasmcloud/wasmcloud</code></a>, a distributed
+WebAssembly execution platform, from Elixir to Rust for improved
+performance and maintainability.</li>
+<li>Designed and implemented open-source tooling and low-level libraries
+around WebAssembly in Rust:
 <ul>
 <li><a href="https://github.com/bytecodealliance/wrpc"
 target="_blank"><code>bytecodealliance/wrpc</code></a> -
@@ -301,35 +443,13 @@ plugin framework for Wasm</li>
 <li><a href="https://github.com/bytecodealliance/wit-deps"
 target="_blank"><code>bytecodealliance/wit-deps</code></a> - package
 manager adopted across Bytecode Alliance projects</li>
-</ul>
-<p>I have migrated the core product of Cosmonic - <a
-href="https://github.com/wasmcloud/wasmcloud"
-target="_blank"><code>wasmcloud/wasmcloud</code></a>, a distributed
-WebAssembly execution platform from Elixir to Rust for improved
-performance and maintainability.</p>
-<p>I am a maintainer of <a
-href="https://github.com/bytecodealliance/wasmtime/pulls?q=author%3Arvolosatovs"
-target="_blank"><code>bytecodealliance/wasmtime</code></a> - the
-industry-leading WebAssembly runtime.</p>
-<p>I have completed a 250000 USD contract for <a
-href="https://github.com/near/nearcore/pulls?q=author%3Arvolosatovs+"
-target="_blank">NEAR blockchain</a> in 6 months, achieving 14x
-performance improvement in their WebAssembly runtime:</p>
-<ul>
-<li>Conducted extensive performance profiling, bottleneck analysis, and
-hot path optimization</li>
-<li>Optimized gas instrumentation overhead via WebAssembly binary
-analysis and patching</li>
-<li>Introduced WebAssembly component model support</li>
-</ul>
-<p>I actively represent Cosmonic at:</p>
-<ul>
-<li>w3c WebAssembly and WASI working group meetings</li>
-<li>WASI, component model and Wasmtime development meetings</li>
-<li>Conferences, such as KubeCon, WasmCon and Wasm I/O</li>
+</ul></li>
+<li>Represented Cosmonic at W3C WebAssembly and WASI working group
+meetings, WASI/component-model/Wasmtime development meetings and
+conferences including KubeCon, WasmCon and Wasm I/O.</li>
 </ul>
 <dl>
-<dt>2021-2023</dt>
+<dt>Oct 2021 - Feb 2023</dt>
 <dd>
 <strong>Profian:</strong> Principal Software Engineer / Network Service
 Tech Lead
@@ -346,82 +466,64 @@ for secure execution of WebAssembly workloads in trusted execution
 environments and services around it.</p>
 <p>The company was closed due to lack of funding.</p>
 <ul>
-<li>Contributed significantly to design of the overall system</li>
-<li>Led a team in development of network services on a tight schedule in
-accordance to business objectives</li>
-<li>Helped team members to overcome obstacles, blockers and meet
-deadlines</li>
-<li>Mentored the team in Rust, Nix, networking and system design</li>
-<li>Mentored students as part of internship programs</li>
+<li>Led network service development for Enarx, an open-source
+confidential computing platform for running WebAssembly workloads inside
+Intel SGX and AMD SEV-SNP TEEs.</li>
+<li>Contributed significantly to overall system design across Linux,
+networking, virtual filesystems and trusted/untrusted execution
+boundaries.</li>
+<li>Designed and implemented <a
+href="https://github.com/enarx-archive/sallyport"
+target="_blank">Sallyport</a>, a high-performance syscall proxying
+library with minimal overhead for secure communication between trusted
+execution environments and the host OS.</li>
+<li>Designed and implemented networking and virtual filesystem support
+for the <a href="https://github.com/enarx/enarx"
+target="_blank">Enarx</a> execution layer and <a
+href="https://github.com/profianinc/drawbridge"
+target="_blank">Drawbridge</a>, a Merkle tree-based object
+registry.</li>
+<li>Mentored engineers in Rust, Nix, networking and systems design;
+helped team members resolve blockers and meet business-critical
+deadlines.</li>
+<li>Set up, maintained and continuously improved organization-wide CI
+processes, release pipelines, <a
+href="https://github.com/rvolosatovs/nixify" target="_blank">Nix-based
+build tooling</a>, image delivery and <a
+href="https://github.com/profianinc/infrastructure/tree/1dc261fa0272b5ecef6e5cdc387216c2b527bf4e"
+target="_blank">NixOS infrastructure</a> on AWS and Equinix.</li>
 <li>Represented the company at KubeCon 2022, Open Source Summit Europe
 2022, <a href="https://fosdem.org/2023/schedule/event/cc_online_enarx/"
-target="_blank">FOSDEM 2023</a></li>
-<li>Represented the company at WASI SIG Registries working group
-meetings</li>
-<li>Designed and implemented:
-<ul>
-<li><a href="https://github.com/enarx-archive/sallyport"
-target="_blank">Sallyport</a> - high-performance syscall proxying
-library with minimal overhead, enabling secure communication between
-trusted execution environments and host OS</li>
-<li>Networking and virtual filesystem support for <a
-href="https://github.com/enarx/enarx" target="_blank">Enarx</a>
-execution layer</li>
-<li><a href="https://github.com/profianinc/drawbridge"
-target="_blank">Drawbridge</a> - a Merkle tree-based object
-registry</li>
-<li>Tooling to increase developer productivity:
-<ul>
-<li><a href="https://github.com/rvolosatovs/wasi-shell"
-target="_blank">Minimal WASI shell</a> to facilitate development and
-testing of virtual file systems</li>
-<li><a href="https://github.com/rvolosatovs/workflow-jobs"
-target="_blank">GitHub worklow job name generator</a></li>
-</ul></li>
-</ul></li>
-<li>Set up, maintained and continuously improved organization-wide CI
-processes and release pipelines
-<ul>
-<li>Designed and implemented a <a
-href="https://github.com/rvolosatovs/nixify" target="_blank">Nix-based
-build library</a> for maintenance and CI performance</li>
-<li>Provided <a href="https://github.com/profianinc/images"
-target="_blank">Enarx image media (AMIs, ISOs, etc.)</a></li>
-</ul></li>
-<li>Brought up all <a
-href="https://github.com/profianinc/infrastructure/tree/1dc261fa0272b5ecef6e5cdc387216c2b527bf4e"
-target="_blank">initial server infrastructure using NixOS</a> on AWS and
-Equinix</li>
-<li>Contributed to various open-source projects, most notably:
-<ul>
-<li><a href="https://github.com/rust-lang/cargo/pull/11478"
-target="_blank"><code>rust-lang/cargo</code></a></li>
-<li><a
+target="_blank">FOSDEM 2023</a> and WASI SIG Registries working group
+meetings.</li>
+<li>Contributed to various open-source projects, most notably <a
+href="https://github.com/rust-lang/cargo/pull/11478"
+target="_blank"><code>rust-lang/cargo</code></a> and <a
 href="https://github.com/bytecodealliance/wasmtime/pulls?q=author%3Arvolosatovs"
-target="_blank"><code>bytecodealliance/wasmtime</code></a></li>
-</ul></li>
+target="_blank"><code>bytecodealliance/wasmtime</code></a>.</li>
 </ul>
 <dl>
-<dt>2021</dt>
+<dt>Jun 2021 - Sep 2021</dt>
 <dd>
 <strong>Docker Inc:</strong> Senior Software Engineer (Programmable OS
 team)
 </dd>
 </dl>
-<p>Tech: Go, C#, Swift, Linux, Windows, MacOS, OCI
+<p>Tech: Go, C#, Swift, Linux, Windows, macOS, OCI
 (<code>docker</code>), GitHub, Jira, REST, OpenAPI</p>
 <p>At Docker I worked on open-source Docker Engine and proprietary
-Docker Desktop application for Windows and Mac with focus on performance
-optimizations.</p>
+Docker Desktop application for Windows and macOS with focus on
+performance optimizations.</p>
 <ul>
-<li>Designed and implemented Linux cgroup-based start/stop feature
-released in Docker Desktop shortly after I left the company</li>
+<li>Designed and implemented a Linux cgroup-based Docker Desktop
+start/stop feature, working across Docker Engine, Desktop and OS
+integration boundaries.</li>
 <li>Contributed to <a
 href="https://github.com/moby/moby/pulls?q=is%3Apr+author%3Arvolosatovs"
-target="_blank"><code>moby/moby</code></a></li>
+target="_blank"><code>moby/moby</code></a>.</li>
 </ul>
 <dl>
-<dt>2016-2021</dt>
+<dt>Aug 2016 - May 2021</dt>
 <dd>
 <strong>The Things Industries / The Things Network:</strong> Backend
 Engineer
@@ -435,15 +537,19 @@ IoT, edge devices, REST</p>
 and proprietary parts of a distributed, global LoRaWAN IoT network
 operator stack.</p>
 <ul>
-<li>Was involved directly in technical conversations with customers</li>
-<li>Provided technical support to high-profile customers</li>
-<li>Managed and represented the company at The Things Conference
-organized yearly</li>
+<li>Built distributed LoRaWAN network-server and join-server components
+handling multi-tenant packet routing, roaming, cryptographic key
+derivation and HSM-backed storage.</li>
+<li>Provided AWS-based SaaS offerings and technical support for
+high-profile production customers.</li>
+<li>Designed proprietary NOC components monitoring network state and
+handling several thousand requests per second.</li>
 <li>Designed the LoRaWAN specification as part of LoRa Alliance
-Technical Commitee</li>
-<li>Provided AWS-based SaaS offerings</li>
+Technical Committee.</li>
+<li>Managed and represented the company at The Things Conference
+organized yearly.</li>
 <li>Implemented support for device roaming in collaboration with other
-LoRaWAN network operators</li>
+LoRaWAN network operators.</li>
 <li>Designed and implemented:
 <ul>
 <li>LoRaWAN specification-compliant, highly-available, distributed,
@@ -458,8 +564,6 @@ href="https://github.com/rvolosatovs/lorawan-stack/tree/v3.12/pkg/joinserver"
 target="_blank">Join Server</a> - performing secure device provisioning
 with cryptographic key derivation, exchange and HSM-backed storage</li>
 </ul></li>
-<li>NOC - a proprietary component monitoring the state of the network
-handling several thousand requests per second</li>
 <li>Build tooling:
 <ul>
 <li><a href="https://github.com/rvolosatovs/docker-protobuf"
@@ -478,7 +582,7 @@ target="_blank">LoRaWAN frame decoder</a></li>
 </ul></li>
 </ul>
 <dl>
-<dt>2016</dt>
+<dt>May 2016 - Aug 2017</dt>
 <dd>
 <strong>Eindhoven University of Technology:</strong> Software Engineer
 </dd>
@@ -491,7 +595,7 @@ application interfacing with Philips Hue lights used on-site in a
 hospital</li>
 </ul>
 <dl>
-<dt>2016</dt>
+<dt>May 2016 - Aug 2016</dt>
 <dd>
 <strong>Google Summer of Code</strong>: Intern
 </dd>
@@ -503,13 +607,13 @@ href="https://github.com/plasma-umass/systemgo"
 target="_blank">systemgo</a> - init system in Go compatible with systemd
 unit file format for a browser-based operating system</li>
 </ul>
-<h2 id="hobby-experience">Hobby Experience</h2>
+<h2 id="selected-open-source">Selected Open Source</h2>
 <ul>
 <li>Nix and NixOS - I use Nix and NixOS on my personal machines/servers
 since 2016
 <ul>
 <li>Member of <a href="https://github.com/NixOS"
-target="_blank">NixOS</a> organization on Github</li>
+target="_blank">NixOS</a> organization on GitHub</li>
 <li>Contribute to <a
 href="https://github.com/NixOS/nixpkgs/pulls?q=author%3Arvolosatovs"
 target="_blank"><code>NixOS/nixpkgs</code></a></li>
@@ -521,20 +625,6 @@ target="_blank">FOSDEM 2023 talk about adopting Nix at Profian</a></li>
 target="_blank"><code>rund</code></a> - A gRPC service in Go, which runs
 arbitrary Linux processes in a separate cgroup2 in an Alpine Linux
 container via <code>pivot_root</code> with mTLS authentication</li>
-<li><a href="https://github.com/rvolosatovs/speech2text"
-target="_blank">Offline speech-to-text tool using Deepspeech</a></li>
-<li><a href="https://github.com/rvolosatovs/libfvad-sys"
-target="_blank">Rust bindings to a C VAD library</a></li>
-<li><a href="https://github.com/rvolosatovs/fvad"
-target="_blank">Idiomatic Rust wrapper for the above</a></li>
-<li><a href="https://github.com/web-extensions-rs/web-extensions-sys"
-target="_blank">Rust bindings to WebExtensions JS API via Wasm</a></li>
-<li><a href="https://github.com/web-extensions-rs/web-extensions"
-target="_blank">Idiomatic Rust wrapper for the above</a></li>
-<li>Julia - I use Julia for computations and occasional scripting, data
-analysis</li>
-<li>I use Linux and BSD derivatives on my machines exclusively since
-2012</li>
 </ul>
 <h2 id="education">Education</h2>
 <dl>
@@ -557,22 +647,13 @@ completely based on Haskell with a big focus on category theory
 the course</li>
 </ul></li>
 </ul>
-<h2 id="about-me">About me</h2>
-<ul>
-<li>Languages:
+<h2 id="languages">Languages</h2>
 <ul>
 <li>Russian - bilingual</li>
 <li>Latvian - bilingual</li>
 <li>English - proficient</li>
-<li>French - basic knowledge</li>
+<li>French - B1</li>
 <li>Dutch - basic knowledge</li>
-</ul></li>
-<li>Studied in a Jazz college part-time in parallel to high school
-studies</li>
-<li>Worked as a professional guitarist, guitar teacher and math teacher
-in the past</li>
-<li>I like various types of art, board games, powerlifting, hiking,
-snowboarding and nature</li>
 </ul>
 </body>
 </html>
